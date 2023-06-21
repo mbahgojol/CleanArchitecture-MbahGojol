@@ -3,11 +3,8 @@ package com.mbahgojol.convention
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
-import org.gradle.kotlin.dsl.getByType
 
 internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
-    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
     with(extension) {
         val compileSdkVersion = libs.findVersion("androidCompileSdk").get().toString().toInt()
         compileSdk = compileSdkVersion
@@ -24,7 +21,6 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
 }
 
 internal fun Project.configureBuildTypes(extension: LibraryExtension) {
-    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
     with(extension) {
         val compileSdkVersion = libs.findVersion("androidCompileSdk").get().toString().toInt()
         compileSdk = compileSdkVersion
@@ -46,7 +42,6 @@ internal fun Project.configureBuildTypes(extension: LibraryExtension) {
 }
 
 internal fun Project.configureDefaultConfig(extension: ApplicationExtension) {
-    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
     with(extension) {
         defaultConfig {
             val minSdkVersion = libs.findVersion("androidMinSdk").get().toString().toInt()
@@ -63,7 +58,6 @@ internal fun Project.configureDefaultConfig(extension: ApplicationExtension) {
 }
 
 internal fun Project.configureDefaultConfig(extension: LibraryExtension) {
-    val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
     with(extension) {
         defaultConfig {
             val minSdkVersion = libs.findVersion("androidMinSdk").get().toString().toInt()

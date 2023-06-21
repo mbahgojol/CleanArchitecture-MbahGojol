@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.mbahgojol.app.buildlogic.convention"
+group = "com.mbahgojol.buildlogic.convention"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -25,19 +25,19 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
-            id = "com.example.toysapp.convention.android.application.compose"
+            id = "mbahgojol.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidFeatureCompose") {
-            id = "com.example.toysapp.convention.android.feature.compose"
+            id = "com.mbahgojol.buildlogic.convention.android.feature.compose"
             implementationClass = "AndroidFeatureComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "com.example.toysapp.convention.android.library"
+            id = "com.mbahgojol.buildlogic.convention.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("jvmLibrary") {
-            id = "com.example.toysapp.convention.jvm.library"
+            id = "com.mbahgojol.buildlogic.convention.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
         }
     }
