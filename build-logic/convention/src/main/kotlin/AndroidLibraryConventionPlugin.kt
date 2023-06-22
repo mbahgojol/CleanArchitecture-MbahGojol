@@ -1,6 +1,7 @@
 import com.android.build.api.dsl.LibraryExtension
 import com.mbahgojol.convention.configureBuildTypes
 import com.mbahgojol.convention.configureDefaultConfig
+import com.mbahgojol.convention.configureFlavors
 import com.mbahgojol.convention.configureKotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -17,6 +18,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 configureDefaultConfig(this)
                 configureBuildTypes(this)
+                configureFlavors(this)
                 configureKotlin(this)
             }
         }
