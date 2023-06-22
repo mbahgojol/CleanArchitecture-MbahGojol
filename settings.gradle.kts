@@ -18,3 +18,13 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "CleanArchitecture-MbahGojol"
 include (":app")
+include(":core")
+include(":core:designsystem")
+include(":core:domain")
+include(":core:data")
+include(":core:network")
+include(":core:common")
+include(":core:database")
+include(":core:model")
+include(":feature")
+include(":feature:dashboard")

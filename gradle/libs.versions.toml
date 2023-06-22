@@ -18,12 +18,11 @@ coil = "2.4.0"
 
 compose-bom = "2022.10.00"
 composecompiler = "1.4.7"
-androidxComposeCompiler = "1.3.2"
 
 coroutines = "1.7.1"
 debugdrawer = "0.9.8"
 
-kotlin = "1.7.20"
+kotlin = "1.8.21"
 kotlininject = "0.6.1"
 ktlint = "0.49.1"
 
@@ -51,15 +50,15 @@ gson = "2.9.0"
 room = "2.4.3"
 
 [plugins]
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 android-test = { id = "com.android.test", version.ref = "agp" }
 cacheFixPlugin = { id = "org.gradle.android.cache-fix", version = "2.7.1" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
-ksp = "com.google.devtools.ksp:1.8.21-1.0.11"
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 gms-googleServices = "com.google.gms.google-services:4.3.15"
 firebase-crashlytics = "com.google.firebase.crashlytics:2.9.6"
@@ -67,6 +66,12 @@ firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "fireb
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 [libraries]
+# android
+google-android = "com.google.android.material:material:1.9.0"
+
+# androidx
+androidx-work-runtime = "androidx.work:work-runtime-ktx:2.8.1"
+androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 androidx-activity-activity = { module = "androidx.activity:activity", version.ref = "androidxactivity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxactivity" }
 androidx-archCoreTesting = "androidx.arch.core:core-testing:2.2.0"
@@ -78,6 +83,8 @@ androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-com
 androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidxConstraintlayoutCompose" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxlifecycle" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidxlifecycle" }
+androidx-lifecycle-runtimeCompose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidxlifecycle" }
+androidx-lifecycle-viewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidxlifecycle" }
 
 paging-common = { module = "app.cash.paging:paging-common", version.ref = "paging-multiplatform" }
 paging-compose = { module = "app.cash.paging:paging-compose-common", version.ref = "paging-multiplatform" }
@@ -85,6 +92,7 @@ paging-compose = { module = "app.cash.paging:paging-compose-common", version.ref
 androidx-palette = "androidx.palette:palette:1.0.0"
 androidx-profileinstaller = "androidx.profileinstaller:profileinstaller:1.3.1"
 
+# test
 androidx-test-core = "androidx.test:core-ktx:1.5.0"
 androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
 androidx-test-junit = "androidx.test.ext:junit-ktx:1.1.5"
@@ -93,10 +101,9 @@ androidx-test-runner = "androidx.test:runner:1.5.2"
 androidx-benchmark-macro = "androidx.benchmark:benchmark-macro-junit4:1.2.0-alpha15"
 androidx-uiautomator = "androidx.test.uiautomator:uiautomator:2.2.0"
 
-androidx-work-runtime = "androidx.work:work-runtime-ktx:2.8.1"
-
 chucker-library = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 
+# coil
 coil-coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 coil-gif = { module = "io.coil-kt:coil-gif", version.ref = "coil" }
@@ -144,12 +151,13 @@ debugdrawer-okhttplogger = { module = "au.com.gridstone.debugdrawer:debugdrawer-
 
 junit = "junit:junit:4.13.2"
 
+# kotlinx
 kotlin-bom = "org.jetbrains.kotlin:kotlin-bom:1.8.0"
 kotlinx-atomicfu = "org.jetbrains.kotlinx:atomicfu:0.20.2"
 kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.0"
-kotlin-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
-kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlinx-coroutines-playservices = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "coroutines" }
 kotlin-extensions = { module = "org.jetbrains.kotlin:kotlin-android-extensions", version.ref = "kotlin" }
 
