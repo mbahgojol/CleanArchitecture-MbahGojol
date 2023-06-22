@@ -2,6 +2,7 @@ plugins {
     id("mbahgojol.android.application")
     id("mbahgojol.android.application.compose")
     id("mbahgojol.android.hilt")
+//    id("mbahgojol.android.application.firebase") // uncomment this line if used firebase (crashlytics, analytic, performance and etc)
 }
 
 android {

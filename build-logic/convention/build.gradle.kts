@@ -49,15 +49,15 @@ gradlePlugin {
             id = "nowinandroid.android.room"
             implementationClass = "AndroidRoomConventionPlugin"
         }
-        register("androidFirebase") {
-            id = "nowinandroid.android.application.firebase"
-            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
-        }
         register("androidFlavors") {
             id = "nowinandroid.android.application.flavors"
             implementationClass = "AndroidApplicationFlavorsConventionPlugin"
         }*/
 
+        register("androidFirebase") {
+            id = "mbahgojol.android.application.firebase"
+            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
+        }
         register("androidHilt") {
             id = "mbahgojol.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
