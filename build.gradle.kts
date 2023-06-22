@@ -10,3 +10,5 @@ plugins {
     alias(libs.plugins.firebase.perf) apply false
     alias(libs.plugins.hilt) apply false
 }
+
+apply(from = File("gradle/dependencyGraph.gradle"))

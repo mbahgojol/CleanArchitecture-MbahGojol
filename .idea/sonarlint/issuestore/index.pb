@@ -3,8 +3,6 @@ F
 build-logic/.gitignore,c/5/c524b04abdf1fa2737e2050c3f13da5be1576c2d
 M
 build-logic/gradle.properties,3/0/30f430aed8b2364fe3d97154334124115dc2653c
-M
-gradle/dependencyGraph.gradle,7/f/7fe93256586c196937e055e15fbfdebf580df750
 F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
 „
