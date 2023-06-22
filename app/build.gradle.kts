@@ -1,5 +1,7 @@
 plugins {
+    id("mbahgojol.android.application")
     id("mbahgojol.android.application.compose")
+    id("mbahgojol.android.hilt")
 }
 
 android {

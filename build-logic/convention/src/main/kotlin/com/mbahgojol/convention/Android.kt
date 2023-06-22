@@ -61,10 +61,8 @@ internal fun Project.configureDefaultConfig(extension: LibraryExtension) {
     with(extension) {
         defaultConfig {
             val minSdkVersion = libs.findVersion("androidMinSdk").get().toString().toInt()
-            val targetSdkVersion = libs.findVersion("androidTargetSdk").get().toString().toInt()
 
             minSdk = minSdkVersion
-            targetSdk = targetSdkVersion
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             consumerProguardFiles("consumer-rules.pro")
             vectorDrawables {
