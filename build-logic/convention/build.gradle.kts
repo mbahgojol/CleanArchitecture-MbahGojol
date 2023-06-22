@@ -47,6 +47,10 @@ gradlePlugin {
         }
         */
 
+        register("androidLibraryJacoco") {
+            id = "mbahgojol.android.library.jacoco"
+            implementationClass = "AndroidLibraryJacocoConventionPlugin"
+        }
         register("androidApplicationJacoco") {
             id = "mbahgojol.android.application.jacoco"
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
