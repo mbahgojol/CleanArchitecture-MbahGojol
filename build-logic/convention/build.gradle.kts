@@ -25,10 +25,6 @@ dependencies {
 gradlePlugin {
     plugins {
         /*
-        register("androidApplicationJacoco") {
-            id = "nowinandroid.android.application.jacoco"
-            implementationClass = "AndroidApplicationJacocoConventionPlugin"
-        }
         register("androidLibrary") {
             id = "nowinandroid.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
@@ -51,6 +47,10 @@ gradlePlugin {
         }
         */
 
+        register("androidApplicationJacoco") {
+            id = "mbahgojol.android.application.jacoco"
+            implementationClass = "AndroidApplicationJacocoConventionPlugin"
+        }
         register("androidFlavors") {
             id = "mbahgojol.android.application.flavors"
             implementationClass = "AndroidApplicationFlavorsConventionPlugin"
