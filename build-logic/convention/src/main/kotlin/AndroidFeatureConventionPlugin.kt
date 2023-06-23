@@ -24,19 +24,12 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
             dependencies {
                 add("implementation", project(":core:model"))
-                //add("implementation", project(":core:ui"))
                 add("implementation", project(":core:designsystem"))
                 add("implementation", project(":core:data"))
                 add("implementation", project(":core:common"))
                 add("implementation", project(":core:domain"))
-                //add("implementation", project(":core:analytics"))
 
-                //add("testImplementation", kotlin("test"))
-                //add("testImplementation", project(":core:testing"))
-                //add("androidTestImplementation", kotlin("test"))
-                //add("androidTestImplementation", project(":core:testing"))
-
-                add("implementation", libs.findLibrary("google.android").get())
+                add("implementation", libs.findLibrary("google.android.material").get())
 
                 add("implementation", libs.findLibrary("coil.coil").get())
                 add("implementation", libs.findLibrary("coil.compose").get())
@@ -44,7 +37,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
                 add("implementation", platform(libs.findLibrary("androidx.core").get()))
                 add("implementation", libs.findLibrary("androidx.appcompat").get())
-                //add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
+                add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtime.ktx").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.viewmodel.ktx").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
@@ -52,7 +45,12 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", libs.findLibrary("androidx.constraintlayout.compose").get())
 
                 add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
+                add("implementation", libs.findLibrary("kotlinx.coroutines.core").get())
                 add("implementation", platform(libs.findLibrary("kotlin.bom").get()))
+
+                add("testImplementation", libs.findLibrary("junit").get())
+                add("androidTestImplementation", libs.findLibrary("androidx.test.junit").get())
+                add("androidTestImplementation", libs.findLibrary("androidx.test.espresso").get())
             }
         }
     }

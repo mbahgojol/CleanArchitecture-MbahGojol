@@ -7,9 +7,3 @@ plugins {
 android {
     namespace = "com.mbahgojol.feature.dashboard"
 }
-
-dependencies {
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.junit)
-    androidTestImplementation(libs.androidx.test.espresso)
-}

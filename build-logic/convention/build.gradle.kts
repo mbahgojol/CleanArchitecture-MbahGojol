@@ -35,6 +35,10 @@ gradlePlugin {
         }
         */
 
+        register("androidKtor") {
+            id = "mbahgojol.android.ktor"
+            implementationClass = "AndroidKtorConventionPlugin"
+        }
         register("androidLibraryJacoco") {
             id = "mbahgojol.android.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"

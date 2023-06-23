@@ -10,8 +10,8 @@ android {
 dependencies {
 
     implementation(libs.androidx.core)
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.google.android.material)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
