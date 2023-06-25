@@ -3,6 +3,7 @@ plugins {
     id("mbahgojol.android.library.jacoco")
     id("mbahgojol.android.ktor")
     id("mbahgojol.android.hilt")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -11,6 +12,10 @@ android {
     }
 
     namespace = "com.mbahgojol.core.network"
+}
+
+secrets {
+    defaultPropertiesFileName = "secrets.defaults.properties"
 }
 
 dependencies {

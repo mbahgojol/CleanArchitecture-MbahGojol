@@ -50,6 +50,8 @@ androidxNavigation = "2.5.2"
 gson = "2.9.0"
 room = "2.4.3"
 
+secrets = "2.0.1"
+
 [libraries]
 # android
 google-android-material = "com.google.android.material:material:1.9.0"
@@ -205,3 +207,4 @@ firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "fireb
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }

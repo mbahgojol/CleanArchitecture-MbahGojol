@@ -26,7 +26,6 @@ object AppHttpClient {
     ) = HttpClient(OkHttp) {
         engine {
             clientCacheSize = 10 * 1024 * 1024
-
             config {
                 val loggingInterceptor = HttpLoggingInterceptor()
                     .apply {

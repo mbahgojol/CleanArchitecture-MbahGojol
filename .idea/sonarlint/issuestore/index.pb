@@ -7,8 +7,6 @@ F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
 C
 settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
-K
-secrets.defaults.properties,6/f/6fd53b705462a6febb94a2b42c49781d196a55f7
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 M
