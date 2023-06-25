@@ -1,13 +1,9 @@
 import com.android.build.api.dsl.LibraryExtension
-import com.mbahgojol.convention.configureBuildTypes
-import com.mbahgojol.convention.configureDefaultConfig
-import com.mbahgojol.convention.configureKotlin
 import com.mbahgojol.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.kotlin
 
 class AndroidFeatureConventionPlugin : Plugin<Project> {
 
@@ -29,14 +25,10 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", project(":core:common"))
                 add("implementation", project(":core:domain"))
 
-                add("implementation", libs.findLibrary("google.android.material").get())
-
                 add("implementation", libs.findLibrary("coil.coil").get())
                 add("implementation", libs.findLibrary("coil.compose").get())
                 add("implementation", libs.findLibrary("coil.gif").get())
 
-                add("implementation", platform(libs.findLibrary("androidx.core").get()))
-                add("implementation", libs.findLibrary("androidx.appcompat").get())
                 add("implementation", libs.findLibrary("androidx.hilt.navigation.compose").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtime.ktx").get())
                 add("implementation", libs.findLibrary("androidx.lifecycle.viewmodel.ktx").get())

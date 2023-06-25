@@ -4,6 +4,7 @@ plugins {
     id("mbahgojol.android.application.compose")
     id("mbahgojol.android.application.jacoco")
     id("mbahgojol.android.hilt")
+//    id("mbahgojol.android.test")
 //    id("mbahgojol.android.application.firebase") // uncomment this line if used firebase (crashlytics, analytic, performance and etc)
 }
 
@@ -18,10 +19,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core)
-    implementation(platform(libs.kotlin.bom))
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)

@@ -34,6 +34,7 @@ retrofit = "2.9.0"
 ktor = "2.3.1"
 
 paging-multiplatform = "3.2.0-alpha05-0.2.2"
+paging = "3.1.1"
 
 androidxHiltNavigationCompose = "1.0.0"
 androidxConstraintlayoutCompose = "1.0.1"
@@ -48,23 +49,6 @@ androidxNavigation = "2.5.2"
 
 gson = "2.9.0"
 room = "2.4.3"
-
-[plugins]
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
-android-application = { id = "com.android.application", version.ref = "agp" }
-android-library = { id = "com.android.library", version.ref = "agp" }
-android-lint = { id = "com.android.lint", version.ref = "agp" }
-android-test = { id = "com.android.test", version.ref = "agp" }
-cacheFixPlugin = { id = "org.gradle.android.cache-fix", version = "2.7.1" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
-gms-googleServices = "com.google.gms.google-services:4.3.15"
-firebase-crashlytics = "com.google.firebase.crashlytics:2.9.6"
-firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 
 [libraries]
 # android
@@ -87,6 +71,7 @@ androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-view
 androidx-lifecycle-runtimeCompose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidxlifecycle" }
 androidx-lifecycle-viewModelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidxlifecycle" }
 
+androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging" }
 paging-common = { module = "app.cash.paging:paging-common", version.ref = "paging-multiplatform" }
 paging-compose = { module = "app.cash.paging:paging-compose-common", version.ref = "paging-multiplatform" }
 
@@ -102,8 +87,6 @@ androidx-test-runner = "androidx.test:runner:1.5.2"
 androidx-benchmark-macro = "androidx.benchmark:benchmark-macro-junit4:1.2.0-alpha15"
 androidx-uiautomator = "androidx.test.uiautomator:uiautomator:2.2.0"
 junit = "junit:junit:4.13.2"
-
-chucker-library = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 
 # coil
 coil-coil = { module = "io.coil-kt:coil", version.ref = "coil" }
@@ -167,6 +150,7 @@ ktlint = { module = "com.pinterest:ktlint", version.ref = "ktlint" }
 leakCanary = "com.squareup.leakcanary:leakcanary-android:2.11"
 
 # network
+chucker-library = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 okhttp-loggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 retrofit-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 okhttp-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
@@ -201,4 +185,23 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 [bundles]
 compose = ["androidx-activity-compose", "compose-material3-material3", "compose-ui-ui", "compose-ui-graphics",
     "compose-ui-tooling-preview"]
-ktor = ["ktor-client-core", "ktor-client-darwin", "ktor-client-okhttp", "ktor-client-auth", "ktor-client-cio"]
+ktor = ["ktor-client-core", "ktor-client-okhttp", "ktor-client-auth", "ktor-client-cio"]
+
+
+[plugins]
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-lint = { id = "com.android.lint", version.ref = "agp" }
+android-test = { id = "com.android.test", version.ref = "agp" }
+cacheFixPlugin = { id = "org.gradle.android.cache-fix", version = "2.7.1" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
+gms-googleServices = "com.google.gms.google-services:4.3.15"
+firebase-crashlytics = "com.google.firebase.crashlytics:2.9.6"
+firebase-perf = { id = "com.google.firebase.firebase-perf", version.ref = "firebasePerfPlugin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

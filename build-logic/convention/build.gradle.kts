@@ -25,16 +25,16 @@ dependencies {
 gradlePlugin {
     plugins {
         /*
-        register("androidTest") {
-            id = "nowinandroid.android.test"
-            implementationClass = "AndroidTestConventionPlugin"
-        }
         register("androidRoom") {
             id = "nowinandroid.android.room"
             implementationClass = "AndroidRoomConventionPlugin"
         }
         */
 
+        register("androidTest") {
+            id = "mbahgojol.android.test"
+            implementationClass = "AndroidTestConventionPlugin"
+        }
         register("androidKtor") {
             id = "mbahgojol.android.ktor"
             implementationClass = "AndroidKtorConventionPlugin"
