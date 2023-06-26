@@ -5,7 +5,7 @@ import okhttp3.Response
 import javax.inject.Inject
 
 // Todo handle refresh token here
-class AppInterceptor @Inject constructor() : Interceptor {
+class AuthTokenInterceptor @Inject constructor() : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val requestBuilder = chain.request().newBuilder()
         val request = requestBuilder.build()

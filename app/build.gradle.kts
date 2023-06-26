@@ -19,7 +19,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:designsystem"))
+    implementation(projects.core.designsystem)
+    implementation(projects.feature.dashboard)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

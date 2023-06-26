@@ -9,16 +9,6 @@ C
 settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
 M
 gradle/dependencyGraph.gradle,7/f/7fe93256586c196937e055e15fbfdebf580df750
-O
-build-logic/settings.gradle.kts,8/a/8a9538c8795ca8e7ea13540a81b1a74a99df58e8
-Ñ
-Tbuild-logic/convention/src/main/kotlin/AndroidApplicationFirebaseConventionPlugin.kt,e/7/e7f4abb3a97d316b2682fe2d8d0f38aed55bfe94
-Ç
-Rbuild-logic/convention/src/main/kotlin/AndroidApplicationJacocoConventionPlugin.kt,e/e/ee96bc8ed46fe37fbaab27a5c6e81d5130b35388
-~
-Nbuild-logic/convention/src/main/kotlin/AndroidLibraryJacocoConventionPlugin.kt,1/f/1fd449ade486b66eacf0e0ed0e71d2669f880db1
-t
-Dbuild-logic/convention/src/main/kotlin/JvmLibraryConventionPlugin.kt,a/8/a8729c50baadd10d4dfd97d5bf26130d8cd3ba94
 Ñ
 Tbuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/ProjectExtensions.kt,7/2/725428f79955aa67e840055f503b9dd737de7688
 y
@@ -27,28 +17,10 @@ P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 X
 (core/common/src/main/AndroidManifest.xml,5/0/50e67f7939fcb609df4b2e97c5fb67bd7d576911
-u
-Ebuild-logic/convention/src/main/kotlin/AndroidKtorConventionPlugin.kt,b/1/b1c838e4c029b49e03bde3f66a7f194925ba9441
-u
-Ebuild-logic/convention/src/main/kotlin/AndroidHiltConventionPlugin.kt,c/2/c297cad91298453f6743c441fa14894e38334287
-É
-Sbuild-logic/convention/src/main/kotlin/AndroidApplicationComposeConventionPlugin.kt,e/e/ee4c3045d5b914833f5bd262728fa45f42c00d50
 Å
 Qbuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/AndroidCompose.kt,f/0/f07af7c6253fa1b7c5a213d376556c68710cd177
-
-Obuild-logic/convention/src/main/kotlin/AndroidLibraryComposeConventionPlugin.kt,1/1/11cf3f8291ee677c1e5b1c5b31db6c097ae184f4
 y
 Ibuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/Kotlin.kt,d/5/d55d3bf0e5757dcf9eb482ba2585b762bfcde7e7
-K
-core/model/build.gradle.kts,9/3/934dbdec0dfe573cbf98bf8707c0766a31a96299
-N
-core/database/build.gradle.kts,c/9/c93dae2df05c386dfd2cb93bc9836d73b1efcb4b
-u
-Ebuild-logic/convention/src/main/kotlin/AndroidTestConventionPlugin.kt,e/d/ed4b5335feee3e4389a93b756fa0361fc42746c1
-x
-Hbuild-logic/convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt,b/7/b74310c44a68e372cd428be36f32813b39627f85
-R
-"core/designsystem/build.gradle.kts,4/8/48c417db29ed7b936ecf7ac2b953f54da71f649a
 q
 Acore/common/src/main/java/com/mbahgojol/common/network/Failure.kt,c/6/c6faee6843ef429bd64d4b7f3a8f6b47e52205c1
 y
@@ -63,18 +35,12 @@ s
 Ccore/common/src/main/java/com/mbahgojol/common/state/ResultState.kt,c/c/cc43388e2881b85c8bbf95dbd1fe2175c0e6ae79
 o
 ?core/common/src/main/java/com/mbahgojol/common/state/UiState.kt,d/9/d90e3fadb228aafb3119157979121be2b74a816a
-L
-core/common/build.gradle.kts,3/3/33faeab8056c945e58d920d723c6a36420381b51
 w
 Gcore/common/src/main/java/com/mbahgojol/common/interactor/Interactor.kt,4/f/4f32682588f74d9efa4e6fa39b09be40457bbbea
 z
 Jcore/common/src/main/java/com/mbahgojol/common/coroutine/AppDispatchers.kt,e/d/ed3cf25aa270fe8eb3de57a0f1bb8eedc8853970
-r
-Bcore/network/src/main/java/com/mbahgojol/network/AppInterceptor.kt,0/0/0020ab1a73fb03a4e372d0be061286c208c3c9db
 
 Obuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/AppBuildType.kt,a/9/a9990e7fd6d64490e0828aa49dffc0e09d7ac50c
-R
-"feature/dashboard/build.gradle.kts,0/7/07b1bb80e19a7d6fed66197637553a5b43074eeb
 q
 Acore/common/src/main/java/com/mbahgojol/common/state/FlowUtils.kt,5/a/5a8a809051fe15db301491e59e8e4a888c720e91
 }
@@ -86,8 +52,6 @@ X
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-É
-Sbuild-logic/convention/src/main/kotlin/AndroidApplicationFlavorsConventionPlugin.kt,6/2/62ce3d6a5198852231d157d27c9e2ea2868a82a3
 I
 gradle/libs.versions.toml,d/7/d7595319a0658be6f1ed500ad590d42e4b28bc4f
 |

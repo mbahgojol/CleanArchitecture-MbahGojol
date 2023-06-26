@@ -22,7 +22,7 @@ object AppHttpClient {
 
     @Provides
     fun provideHttpClient(
-        interceptor: AppInterceptor
+        interceptor: AuthTokenInterceptor
     ) = HttpClient(OkHttp) {
         engine {
             clientCacheSize = 10 * 1024 * 1024
