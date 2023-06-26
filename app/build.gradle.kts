@@ -5,10 +5,14 @@ plugins {
     id("mbahgojol.android.application.jacoco")
     id("mbahgojol.android.hilt")
 //    id("mbahgojol.android.test")
-//    id("mbahgojol.android.application.firebase") // uncomment this line if used firebase (crashlytics, analytic, performance and etc)
+    id("mbahgojol.android.application.firebase")
 }
 
 android {
+    buildFeatures {
+        buildConfig = true
+    }
+
     namespace = "com.mbahgojol.cleanarchitecture"
 
     defaultConfig {
@@ -21,6 +25,7 @@ android {
 dependencies {
     implementation(projects.core.designsystem)
     implementation(projects.feature.dashboard)
+    implementation(projects.core.common)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

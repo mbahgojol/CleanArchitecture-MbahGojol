@@ -24,6 +24,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 dependencies {
                     add("implementation", platform(libs.findLibrary("kotlin.bom").get()))
                     add("implementation", libs.findLibrary("androidx.core").get())
+                    add("implementation", libs.findLibrary("timber").get())
                     add("implementation", libs.findLibrary("androidx.lifecycle.runtime.ktx").get())
                 }
             }

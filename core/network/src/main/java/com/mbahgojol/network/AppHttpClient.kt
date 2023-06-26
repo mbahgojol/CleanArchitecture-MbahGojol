@@ -10,10 +10,12 @@ import dagger.hilt.components.SingletonComponent
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.DefaultRequest
+import io.ktor.client.plugins.observer.ResponseObserver
 import io.ktor.client.request.header
 import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
 import okhttp3.logging.HttpLoggingInterceptor
+import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 @Module
@@ -23,16 +25,15 @@ object AppHttpClient {
     @Provides
     fun provideHttpClient(
         interceptor: AuthTokenInterceptor
-    ) = HttpClient(OkHttp) {
+    ): HttpClient = HttpClient(OkHttp) {
         engine {
             clientCacheSize = 10 * 1024 * 1024
             config {
-                val loggingInterceptor = HttpLoggingInterceptor()
-                    .apply {
-                        if(BuildConfig.DEBUG) {
-                            setLevel(HttpLoggingInterceptor.Level.BODY)
-                        }
+                val loggingInterceptor = HttpLoggingInterceptor().apply {
+                    if (BuildConfig.DEBUG) {
+                        setLevel(HttpLoggingInterceptor.Level.BODY)
                     }
+                }
                 addInterceptor(loggingInterceptor)
                 addInterceptor(interceptor)
 
@@ -42,8 +43,15 @@ object AppHttpClient {
             }
         }
 
+        install(ResponseObserver) {
+            onResponse { response ->
+                Timber.d("HTTP status:", response.status.value)
+            }
+        }
+
         install(DefaultRequest) {
             header(HttpHeaders.ContentType, ContentType.Application.Json)
+            url()
         }
     }
 }

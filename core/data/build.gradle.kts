@@ -1,6 +1,8 @@
 plugins {
     id("mbahgojol.android.library")
     id("mbahgojol.android.library.jacoco")
+    id("mbahgojol.android.ktor")
+    id("mbahgojol.android.hilt")
 }
 
 android {

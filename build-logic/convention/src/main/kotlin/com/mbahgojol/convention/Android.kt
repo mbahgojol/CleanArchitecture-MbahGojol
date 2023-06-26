@@ -10,6 +10,7 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
         compileSdk = compileSdkVersion
         buildTypes {
             release {
+                isShrinkResources = true
                 isMinifyEnabled = true
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
