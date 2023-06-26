@@ -1,4 +1,4 @@
-package com.mbahgojol.cleanarchitecture.ui.theme
+package com.mbahgojol.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

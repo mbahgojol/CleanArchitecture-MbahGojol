@@ -1,4 +1,4 @@
-package com.mbahgojol.cleanarchitecture.ui.theme
+package com.mbahgojol.designsystem.theme
 
 import android.app.Activity
 import android.os.Build

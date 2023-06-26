@@ -23,14 +23,10 @@ t
 Dbuild-logic/convention/src/main/kotlin/JvmLibraryConventionPlugin.kt,a/8/a8729c50baadd10d4dfd97d5bf26130d8cd3ba94
 y
 Ibuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/Jacoco.kt,9/6/96eddb4c0e71d4247a49c6a7cf697d50d013047f
-w
-Gapp/src/main/java/com/mbahgojol/cleanarchitecture/AndroidApplication.kt,8/d/8d7b03528ad5aa6c558913a27abf75f4e0ce1bde
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 X
 (core/common/src/main/AndroidManifest.xml,5/0/50e67f7939fcb609df4b2e97c5fb67bd7d576911
-z
-Jbuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/Android.kt,e/3/e3b1d240cf1539879679b2fc427516c12f05adae
 u
 Ebuild-logic/convention/src/main/kotlin/AndroidKtorConventionPlugin.kt,b/1/b1c838e4c029b49e03bde3f66a7f194925ba9441
 u
@@ -45,16 +41,10 @@ y
 Ibuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/Kotlin.kt,d/5/d55d3bf0e5757dcf9eb482ba2585b762bfcde7e7
 K
 core/model/build.gradle.kts,9/3/934dbdec0dfe573cbf98bf8707c0766a31a96299
-L
-core/domain/build.gradle.kts,f/6/f6899d750c55b14a51220f253d74a5cc3ad0be8b
 N
 core/database/build.gradle.kts,c/9/c93dae2df05c386dfd2cb93bc9836d73b1efcb4b
-J
-core/data/build.gradle.kts,f/4/f4478630ebacf5eb78d8fddbf2b884e78aef0d50
 u
 Ebuild-logic/convention/src/main/kotlin/AndroidTestConventionPlugin.kt,e/d/ed4b5335feee3e4389a93b756fa0361fc42746c1
-|
-Lbuild-logic/convention/src/main/kotlin/AndroidApplicationConventionPlugin.kt,c/5/c57871b8f47d58f0f7b371536988053a96c4b52b
 x
 Hbuild-logic/convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt,b/7/b74310c44a68e372cd428be36f32813b39627f85
 R
@@ -85,10 +75,6 @@ Bcore/network/src/main/java/com/mbahgojol/network/AppInterceptor.kt,0/0/0020ab1
 Obuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/AppBuildType.kt,a/9/a9990e7fd6d64490e0828aa49dffc0e09d7ac50c
 R
 "feature/dashboard/build.gradle.kts,0/7/07b1bb80e19a7d6fed66197637553a5b43074eeb
-x
-Hbuild-logic/convention/src/main/kotlin/AndroidFeatureConventionPlugin.kt,5/f/5f1b3f4443dabe4ba1f5007ac5c0b6566df564ea
-q
-Aapp/src/main/java/com/mbahgojol/cleanarchitecture/MainActivity.kt,8/5/85fb85fa80fb8f2309c3397e80c8342dfe2ed4ad
 q
 Acore/common/src/main/java/com/mbahgojol/common/state/FlowUtils.kt,5/a/5a8a809051fe15db301491e59e8e4a888c720e91
 }

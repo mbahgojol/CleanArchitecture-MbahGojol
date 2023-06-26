@@ -10,7 +10,7 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
         compileSdk = compileSdkVersion
         buildTypes {
             release {
-                isMinifyEnabled = false
+                isMinifyEnabled = true
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
@@ -26,7 +26,7 @@ internal fun Project.configureBuildTypes(extension: LibraryExtension) {
         compileSdk = compileSdkVersion
         buildTypes {
             release {
-                isMinifyEnabled = false
+                isMinifyEnabled = true
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
