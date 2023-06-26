@@ -31,6 +31,12 @@ gradlePlugin {
         }
         */
 
+        create(PluginInfo.name) {
+            id = PluginInfo.group
+            implementationClass = PluginInfo.implementationClass
+            displayName = PluginInfo.displayName
+            description = PluginInfo.description
+        }
         register("androidTest") {
             id = "mbahgojol.android.test"
             implementationClass = "AndroidTestConventionPlugin"
@@ -84,4 +90,13 @@ gradlePlugin {
             implementationClass = "JvmLibraryConventionPlugin"
         }
     }
+}
+
+object PluginInfo {
+    const val description = "A Gradle plugin for providing secrets securely to an Android project."
+    const val displayName = "Secrets Gradle Plugin for Android"
+    const val group = "com.mbahgojol.secrets_gradle_plugin"
+    const val implementationClass =
+        "com.mbahgojol.secrets_gradle_plugin.SecretsPlugin"
+    const val name = "secretsGradlePlugin"
 }

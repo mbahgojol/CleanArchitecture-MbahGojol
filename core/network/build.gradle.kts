@@ -3,7 +3,7 @@ plugins {
     id("mbahgojol.android.library.jacoco")
     id("mbahgojol.android.ktor")
     id("mbahgojol.android.hilt")
-    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("com.mbahgojol.secrets_gradle_plugin")
 }
 
 android {
@@ -15,7 +15,7 @@ android {
 }
 
 secrets {
-    defaultPropertiesFileName = "secrets.defaults.properties"
+    path = "config/"
 }
 
 dependencies {

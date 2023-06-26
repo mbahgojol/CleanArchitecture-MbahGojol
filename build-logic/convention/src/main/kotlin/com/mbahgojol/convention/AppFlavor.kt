@@ -11,7 +11,7 @@ enum class FlavorDimension {
 }
 
 @Suppress("EnumEntryName")
-enum class NiaFlavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
+enum class AppFlavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
     dev(FlavorDimension.contentType, applicationIdSuffix = ".dev"),
     stg(FlavorDimension.contentType, applicationIdSuffix = ".stg"),
     prod(FlavorDimension.contentType)
@@ -19,12 +19,12 @@ enum class NiaFlavor(val dimension: FlavorDimension, val applicationIdSuffix: St
 
 fun configureFlavors(
     commonExtension: CommonExtension<*, *, *, *>,
-    flavorConfigurationBlock: ProductFlavor.(flavor: NiaFlavor) -> Unit = {}
+    flavorConfigurationBlock: ProductFlavor.(flavor: AppFlavor) -> Unit = {}
 ) {
     commonExtension.apply {
         flavorDimensions += FlavorDimension.contentType.name
         productFlavors {
-            NiaFlavor.values().forEach {
+            AppFlavor.values().forEach {
                 create(it.name) {
                     dimension = it.dimension.name
                     flavorConfigurationBlock(this, it)

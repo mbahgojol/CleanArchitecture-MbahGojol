@@ -2,6 +2,7 @@
 
 package com.mbahgojol.network
 
+import android.util.Log
 import com.mbahgojol.core.network.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -26,6 +27,7 @@ object AppHttpClient {
     ) = HttpClient(OkHttp) {
         engine {
             clientCacheSize = 10 * 1024 * 1024
+            Log.e("BASE_URL", BuildConfig.BACKEND_URL_PROD)
             config {
                 val loggingInterceptor = HttpLoggingInterceptor()
                     .apply {
