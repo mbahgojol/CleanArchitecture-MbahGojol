@@ -11,8 +11,6 @@ M
 gradle/dependencyGraph.gradle,7/f/7fe93256586c196937e055e15fbfdebf580df750
 „
 Tbuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/ProjectExtensions.kt,7/2/725428f79955aa67e840055f503b9dd737de7688
-y
-Ibuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/Jacoco.kt,9/6/96eddb4c0e71d4247a49c6a7cf697d50d013047f
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 X
@@ -50,18 +48,12 @@ X
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-|
-Lbuild-logic/convention/src/main/kotlin/com/mbahgojol/convention/AppFlavor.kt,4/2/42abb5885d2d71e955f232c32c3746382a3699d4
 ˆ
 Xbuild-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/Extensions.kt,4/b/4ba6fb51138a6984979c462c8e22316ea43467c6
-@
-build.gradle.kts,d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d
 ”
 dbuild-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/SecretsPluginExtension.kt,8/d/8dc9993bd6cf750f54149f15c62320f1d2ebcaf0
 ‹
 [build-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/SecretsPlugin.kt,6/4/64473eb0a29b7744e4249c889e97bbfdc6640c23
-q
-Aapp/src/main/java/com/mbahgojol/cleanarchitecture/MainActivity.kt,8/5/85fb85fa80fb8f2309c3397e80c8342dfe2ed4ad
 ƒ
 Sbuild-logic/convention/src/main/kotlin/AndroidApplicationComposeConventionPlugin.kt,e/e/ee4c3045d5b914833f5bd262728fa45f42c00d50
 ƒ
@@ -104,3 +96,27 @@ J
 core/data/build.gradle.kts,f/4/f4478630ebacf5eb78d8fddbf2b884e78aef0d50
 M
 core/network/build.gradle.kts,2/9/29b8be2dc5289918ec30fe99fcc72fa2d08c55d3
+€
+Pcore/data/src/main/java/com/mbahgojol/data/network/datasources/NewsDataSource.kt,5/7/5770a525e48d99fb36e4fda5be088e90fde3702a
+x
+Hbuild-logic/convention/src/main/kotlin/AndroidFeatureConventionPlugin.kt,5/f/5f1b3f4443dabe4ba1f5007ac5c0b6566df564ea
+x
+Hbuild-logic/convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt,b/7/b74310c44a68e372cd428be36f32813b39627f85
+w
+Gapp/src/main/java/com/mbahgojol/cleanarchitecture/AndroidApplication.kt,8/d/8d7b03528ad5aa6c558913a27abf75f4e0ce1bde
+w
+Gcore/common/src/main/java/com/mbahgojol/common/interactor/Interactor.kt,4/f/4f32682588f74d9efa4e6fa39b09be40457bbbea
+„
+Tbuild-logic/convention/src/main/kotlin/AndroidApplicationFirebaseConventionPlugin.kt,e/7/e7f4abb3a97d316b2682fe2d8d0f38aed55bfe94
+L
+core/domain/build.gradle.kts,f/6/f6899d750c55b14a51220f253d74a5cc3ad0be8b
+I
+gradle/libs.versions.toml,d/7/d7595319a0658be6f1ed500ad590d42e4b28bc4f
+L
+core/common/build.gradle.kts,3/3/33faeab8056c945e58d920d723c6a36420381b51
+u
+Ecore/common/src/main/java/com/mbahgojol/common/logging/ReleaseTree.kt,4/4/44e2477d5a83a0377bac534f1209483d7ca1cf65
+q
+Acore/network/src/main/java/com/mbahgojol/network/AppHttpClient.kt,a/4/a488c47eea07de69d71ed9889d2254224c38f38c
+P
+ app/src/dev/google-services.json,2/9/2919eefbbd593c508adc2de58c2d2c36cd8db660

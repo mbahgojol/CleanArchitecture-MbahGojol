@@ -8,14 +8,31 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
     with(extension) {
         val compileSdkVersion = libs.findVersion("androidCompileSdk").get().toString().toInt()
         compileSdk = compileSdkVersion
+
+        signingConfigs {
+            create(AppFlavor.dev.name) {
+                keyAlias = "keystore_test"
+                keyPassword = "123123"
+                storePassword = "123123"
+                storeFile = file("src/dev/keystore_test.jks")
+            }
+
+            create(AppFlavor.prod.name) {
+                keyAlias = "keystore_test"
+                keyPassword = "123123"
+                storePassword = "123123"
+                storeFile = file("src/dev/keystore_test.jks")
+            }
+        }
+
         buildTypes {
             release {
                 isShrinkResources = true
                 isMinifyEnabled = true
                 proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
                 )
+                signingConfig = signingConfigs.getByName(AppFlavor.prod.name)
             }
         }
     }
@@ -32,6 +49,7 @@ internal fun Project.configureBuildTypes(extension: LibraryExtension) {
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
                 )
+                signingConfig = signingConfigs.getByName("debug")
             }
         }
         packaging {
