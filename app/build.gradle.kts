@@ -24,7 +24,7 @@ android {
 
 dependencies {
     implementation(projects.core.designsystem)
-    implementation(projects.feature.dashboard)
+    implementation(projects.feature.home)
     implementation(projects.core.common)
 
     testImplementation(libs.junit)

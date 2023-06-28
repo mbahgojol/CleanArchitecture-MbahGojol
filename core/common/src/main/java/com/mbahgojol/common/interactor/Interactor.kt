@@ -19,17 +19,15 @@ abstract class Interactor<in P> {
     operator fun invoke(
         params: P,
         timeoutMs: Long = defaultTimeoutMs,
-    ): Flow<InvokeStatus> = flow {
+    ): Flow<Result<Unit>> = flow {
         try {
             withTimeout(timeoutMs) {
-                emit(InvokeStarted)
-                doWork(params)
-                emit(InvokeSuccess)
+                emit(Result.success(doWork(params)))
             }
         } catch (t: TimeoutCancellationException) {
-            emit(InvokeError(t))
+            emit(Result.failure(t))
         }
-    }.catch { t -> emit(InvokeError(t)) }
+    }.catch { t -> emit(Result.failure(t)) }
 
     suspend fun executeSync(params: P) = doWork(params)
 
@@ -43,7 +41,10 @@ abstract class Interactor<in P> {
 suspend inline fun Interactor<Unit>.executeSync() = executeSync(Unit)
 
 abstract class ResultInteractor<in P, R> {
-    suspend operator fun invoke(params: P): R = doWork(params)
+    operator fun invoke(params: P): Flow<Result<R>> = flow {
+        emit(Result.success(doWork(params)))
+    }.catch { t -> emit(Result.failure(t)) }
+
     protected abstract suspend fun doWork(params: P): R
 }
 

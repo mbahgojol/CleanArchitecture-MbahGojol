@@ -25,6 +25,8 @@ dependencies {
     implementation("io.ktor:ktor-client-logging-jvm:1.5.0")*/
 
     implementation(libs.okhttp.loggingInterceptor)
+    debugImplementation(libs.chucker.library)
+    releaseImplementation(libs.chucker.library.no.op)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

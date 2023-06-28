@@ -2,10 +2,13 @@
 
 package com.mbahgojol.network
 
+import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.mbahgojol.core.network.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
@@ -24,7 +27,8 @@ object AppHttpClient {
 
     @Provides
     fun provideHttpClient(
-        interceptor: AuthTokenInterceptor
+        @ApplicationContext context: Context,
+        authTokenInterceptor: AuthTokenInterceptor
     ): HttpClient = HttpClient(OkHttp) {
         engine {
             clientCacheSize = 10 * 1024 * 1024
@@ -34,8 +38,13 @@ object AppHttpClient {
                         setLevel(HttpLoggingInterceptor.Level.BODY)
                     }
                 }
+
+                addInterceptor(
+                    ChuckerInterceptor.Builder(context)
+                        .build()
+                )
                 addInterceptor(loggingInterceptor)
-                addInterceptor(interceptor)
+                addInterceptor(authTokenInterceptor)
 
                 readTimeout(25, TimeUnit.SECONDS)
                 connectTimeout(60, TimeUnit.SECONDS)
@@ -50,8 +59,8 @@ object AppHttpClient {
         }
 
         install(DefaultRequest) {
+            url(BuildConfig.BASE_URL)
             header(HttpHeaders.ContentType, ContentType.Application.Json)
-            url()
         }
     }
 }
