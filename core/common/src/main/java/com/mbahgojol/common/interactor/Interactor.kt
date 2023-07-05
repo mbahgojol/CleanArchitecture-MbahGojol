@@ -8,12 +8,16 @@ import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withTimeout
 import java.util.concurrent.TimeUnit
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.minutes
 
 abstract class Interactor<in P> {
     operator fun invoke(
@@ -79,3 +83,45 @@ abstract class SubjectInteractor<P : Any, T> {
 
     protected abstract fun createObservable(params: P): Flow<T>
 }
+
+abstract class Interactorp<in P, R> {
+    private var count: Int = 0
+    private val loadingState = MutableStateFlow(count)
+
+    val inProgress: Flow<Boolean>
+        get() = loadingState.map { it > 0 }.distinctUntilChanged()
+
+    private fun addLoader() {
+        loadingState.value = count++
+    }
+
+    private fun removeLoader() {
+        loadingState.value = count--
+    }
+
+    suspend operator fun invoke(
+        params: P,
+        timeout: Duration = DefaultTimeout,
+    ): Result<R> {
+        return try {
+            addLoader()
+            runCatching {
+                withTimeout(timeout) {
+                    doWork(params)
+                }
+            }
+        } finally {
+            removeLoader()
+        }
+    }
+
+    protected abstract suspend fun doWork(params: P): R
+
+    companion object {
+        internal val DefaultTimeout = 5.minutes
+    }
+}
+
+suspend fun <R> Interactorp<Unit, R>.invoke(
+    timeout: Duration = Interactorp.DefaultTimeout,
+) = invoke(Unit, timeout)

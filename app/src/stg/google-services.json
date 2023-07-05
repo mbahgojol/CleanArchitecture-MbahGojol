@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:751527420254:android:eb7178591663bfd29befcf",
         "android_client_info": {
-          "package_name": "com.mbahgojol.cleanarchitecture"
+          "package_name": "com.mbahgojol.cleanarchitecture.dev"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "751527420254-16pn2bniok1i6pvpo1qdskstalbklo1f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.mbahgojol.cleanarchitecture",
+            "package_name": "com.mbahgojol.cleanarchitecture.dev",
             "certificate_hash": "079ba8c3fc0a2cebe8d4e4ae7e7793ec115c1550"
           }
         },

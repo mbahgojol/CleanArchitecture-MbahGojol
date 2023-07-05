@@ -9,19 +9,14 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
         val compileSdkVersion = libs.findVersion("androidCompileSdk").get().toString().toInt()
         compileSdk = compileSdkVersion
 
-        signingConfigs {
-            create(AppFlavor.dev.name) {
-                keyAlias = "keystore_test"
-                keyPassword = "123123"
-                storePassword = "123123"
-                storeFile = file("src/dev/keystore_test.jks")
-            }
+        val release = "release"
 
-            create(AppFlavor.prod.name) {
+        signingConfigs {
+            create(release) {
                 keyAlias = "keystore_test"
                 keyPassword = "123123"
                 storePassword = "123123"
-                storeFile = file("src/dev/keystore_test.jks")
+                storeFile = file("src/prod/keystore_test.jks")
             }
         }
 
@@ -32,7 +27,7 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
                 )
-                signingConfig = signingConfigs.getByName(AppFlavor.prod.name)
+                signingConfig = signingConfigs.getByName(release)
             }
         }
     }
