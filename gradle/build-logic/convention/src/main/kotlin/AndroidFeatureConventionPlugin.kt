@@ -14,10 +14,6 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 apply("mbahgojol.android.hilt")
             }
 
-            extensions.configure<LibraryExtension> {
-
-            }
-
             dependencies {
                 add("implementation", project(":core:model"))
                 add("implementation", project(":core:designsystem"))
