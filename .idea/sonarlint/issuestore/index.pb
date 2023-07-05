@@ -71,15 +71,10 @@ Q
 !app/src/prod/google-services.json,f/2/f23a2d2ffc1152961b82d029f5a2b54601427d45
 ›
 kgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/SecretsPluginExtension.kt,3/7/373a80da96ac568b94acbc80213c02bf46baef1b
-M
-core/network/build.gradle.kts,2/9/29b8be2dc5289918ec30fe99fcc72fa2d08c55d3
 E
 config/dev.properties,d/4/d4fa5b64f85413841274f44a0d688f08199aacda
 F
 config/prod.properties,2/7/27cd14588d26a18d3633d9c12425713ce973dd8f
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 C
