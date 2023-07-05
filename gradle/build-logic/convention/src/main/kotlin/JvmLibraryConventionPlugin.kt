@@ -1,4 +1,3 @@
-import com.mbahgojol.convention.libs
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
