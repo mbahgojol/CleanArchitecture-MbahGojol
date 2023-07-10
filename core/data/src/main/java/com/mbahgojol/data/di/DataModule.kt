@@ -10,7 +10,6 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 interface DataModule {
-
     @Binds
     fun bindsNewsRepository(
         newsRepositoryImpl: NewsRepositoryImpl,
