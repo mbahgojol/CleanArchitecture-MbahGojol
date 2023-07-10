@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.mbahgojol.convention.configureAndroid
 import com.mbahgojol.convention.configureBuildTypes
 import com.mbahgojol.convention.configureDefaultConfig
 import com.mbahgojol.convention.configureKotlin
@@ -14,9 +15,13 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
+                // this gradle cache fix was not tested on gradle version 8.0.2
+                // remove plugin when have the problem
+                 apply("org.gradle.android.cache-fix")
             }
 
             extensions.configure<ApplicationExtension> {
+                configureAndroid()
                 configureDefaultConfig(this)
                 configureBuildTypes(this)
                 configureKotlin(this)

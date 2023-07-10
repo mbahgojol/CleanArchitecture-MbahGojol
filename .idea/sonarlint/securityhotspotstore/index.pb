@@ -7,8 +7,6 @@ o
 ?core/common/src/main/java/com/mbahgojol/common/state/UiState.kt,d/9/d90e3fadb228aafb3119157979121be2b74a816a
 q
 Acore/common/src/main/java/com/mbahgojol/common/state/FlowUtils.kt,5/a/5a8a809051fe15db301491e59e8e4a888c720e91
-w
-Gapp/src/main/java/com/mbahgojol/cleanarchitecture/AndroidApplication.kt,8/d/8d7b03528ad5aa6c558913a27abf75f4e0ce1bde
 u
 Ecore/common/src/main/java/com/mbahgojol/common/logging/ReleaseTree.kt,4/4/44e2477d5a83a0377bac534f1209483d7ca1cf65
 P
@@ -19,8 +17,6 @@ s
 Ccore/common/src/main/java/com/mbahgojol/common/exception/Failure.kt,b/8/b83ebb872b18c40e73a129c467354610bc0178b9
 x
 Hcore/common/src/main/java/com/mbahgojol/common/exception/ExceptionExt.kt,1/0/1010badc6198667e50e89df739c4277dcdd69ba4
-q
-Aapp/src/main/java/com/mbahgojol/cleanarchitecture/MainActivity.kt,8/5/85fb85fa80fb8f2309c3397e80c8342dfe2ed4ad
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 u
@@ -37,22 +33,16 @@ u
 Ecore/data/src/main/java/com/mbahgojol/data/news/NewsRepositoryImpl.kt,7/0/70ec44487e7b9f0789361fdbe9137bf35e4ef1b4
 k
 ;feature/home/src/main/java/com/mbahgojol/home/HomeScreen.kt,8/4/84af8666fd3c37c35c67f11bce3a72daf2add7b5
-D
-app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6
 M
 feature/home/build.gradle.kts,b/e/be4e288f08b8cb3c35191b1a7d3e737f2a0057e5
 í
 bgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/SecretsPlugin.kt,b/a/ba56f609e9207d82b341299ec427c5a5fc40c0ad
 è
 _gradle/build-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/Extensions.kt,b/9/b9f557a002282b53cc3df3cab706df0ffa9a7457
-É
-Sgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/AppFlavor.kt,e/e/ee2e37a2519cd7d336cfd21a145e4c73fe1ba6ed
 Ä
 Pgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/Jacoco.kt,f/4/f4bef2d7e73b476480eed0ccaea5b72937625e09
 Ö
 Ugradle/build-logic/convention/src/main/kotlin/AndroidLibraryJacocoConventionPlugin.kt,d/b/db21d04ecb551152fa5db3e9a01f8744fac64b00
-I
-gradle/libs.versions.toml,d/7/d7595319a0658be6f1ed500ad590d42e4b28bc4f
 P
  app/src/stg/google-services.json,f/d/fd9b632503cb02a1d3e8f531214a3245d6b801c0
 E
@@ -65,20 +55,10 @@ E
 config/dev.properties,d/4/d4fa5b64f85413841274f44a0d688f08199aacda
 F
 config/prod.properties,2/7/27cd14588d26a18d3633d9c12425713ce973dd8f
-A
-gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
-C
-settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
-@
-build.gradle.kts,d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d
 T
 $gradle/build-logic/gradle.properties,9/3/9366009594a7f46b8bef97ef5c38595ba51895a9
 M
 gradle/build-logic/.gitignore,9/6/96366a66a022f64d6d4685f55ba60c21069ab98e
-V
-&gradle/build-logic/settings.gradle.kts,d/d/dd4637bf08517b825e427e953e2f46e7ed7fce61
-^
-.gradle/build-logic/convention/build.gradle.kts,e/2/e21fcb981fb8018de286b14103381b934119a6d6
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 >
@@ -97,14 +77,6 @@ L
 core/common/build.gradle.kts,3/3/33faeab8056c945e58d920d723c6a36420381b51
 F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
-Å
-Qgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/Android.kt,2/5/256758d79e5c936649c6de927c646dfff20eec73
-
-Ogradle/build-logic/convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt,a/4/a45ac398a618b59d9d01adf826c2cd1124cf16a3
-Ä
-Pgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/Kotlin.kt,4/1/419029c700a16d6f61c3f5869722d3f19f02a602
-
-Ogradle/build-logic/convention/src/main/kotlin/AndroidFeatureConventionPlugin.kt,8/6/8682f5a9d6023a3997578db96973726da5312873
 q
 Acore/network/src/main/java/com/mbahgojol/network/AppHttpClient.kt,a/4/a488c47eea07de69d71ed9889d2254224c38f38c
 M

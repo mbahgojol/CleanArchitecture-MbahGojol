@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.LibraryExtension
+import com.mbahgojol.convention.configureAndroid
 import com.mbahgojol.convention.configureBuildTypes
 import com.mbahgojol.convention.configureDefaultConfig
 import com.mbahgojol.convention.configureFlavors
@@ -15,9 +16,13 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.library")
                 apply("org.jetbrains.kotlin.android")
+                // this gradle cache fix was not tested on gradle version 8.0.2
+                // remove plugin when have the problem
+                 apply("org.gradle.android.cache-fix")
             }
 
             extensions.configure<LibraryExtension> {
+                configureAndroid()
                 configureDefaultConfig(this)
                 configureBuildTypes(this)
                 configureFlavors(this)

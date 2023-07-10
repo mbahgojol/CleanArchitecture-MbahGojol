@@ -185,6 +185,7 @@ firebase-crashlytics-gradlePlugin = { module = "com.google.firebase:firebase-cra
 firebase-performance-gradlePlugin = { module = "com.google.firebase:perf-plugin", version.ref = "firebasePerfPlugin" }
 ksp-gradlePlugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
+tools-desugarjdklibs = "com.android.tools:desugar_jdk_libs:2.0.3"
 
 [bundles]
 compose = ["androidx-activity-compose", "compose-material3-material3", "compose-ui-ui", "compose-ui-graphics",

@@ -24,13 +24,6 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        /*
-        register("androidRoom") {
-            id = "nowinandroid.android.room"
-            implementationClass = "AndroidRoomConventionPlugin"
-        }
-        */
-
         create(PluginInfo.name) {
             id = PluginInfo.group
             implementationClass = PluginInfo.implementationClass

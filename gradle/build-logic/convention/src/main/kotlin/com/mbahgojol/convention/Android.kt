@@ -2,12 +2,33 @@ package com.mbahgojol.convention
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.LibraryExtension
+import com.android.build.gradle.BaseExtension
+import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
+
+fun Project.configureAndroid() {
+    android {
+        compileSdkVersion(libs.compileSdkVersion)
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
+
+            isCoreLibraryDesugaringEnabled = true
+        }
+    }
+
+    dependencies {
+        "coreLibraryDesugaring"(libs.findLibrary("tools.desugarjdklibs").get())
+    }
+}
+
+private fun Project.android(action: BaseExtension.() -> Unit) = extensions.configure(action)
 
 internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
     with(extension) {
-        compileSdk = libs.compileSdkVersion
-
         val release = "release"
 
         signingConfigs {
@@ -34,8 +55,6 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
 
 internal fun Project.configureBuildTypes(extension: LibraryExtension) {
     with(extension) {
-        compileSdk = libs.compileSdkVersion
-
         buildTypes {
             release {
                 isMinifyEnabled = true
