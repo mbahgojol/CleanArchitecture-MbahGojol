@@ -1,39 +1,33 @@
+import com.mbahgojol.convention.androidMain
+
 plugins {
     kotlin("multiplatform")
-    id("com.android.application")
-    id("org.jetbrains.compose")
+    id("mbahgojol.android.application")
+    id("mbahgojol.android.application.compose")
+    id("mbahgojol.android.application.flavors")
+    id("mbahgojol.android.application.jacoco")
+    id("mbahgojol.android.hilt")
 }
 
 kotlin {
-    android()
-    sourceSets {
-        val androidMain by getting {
-            dependencies {
-                implementation(project(":shared"))
-            }
+    androidMain {
+        dependencies {
+            implementation(projects.shared)
         }
     }
 }
 
 android {
-    compileSdk = libs.versions.androidCompileSdk.orNull?.toInt()
     namespace = "com.myapplication"
-
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
-    defaultConfig {
-        applicationId = "com.myapplication.MyApplication"
-        minSdk = libs.versions.androidMinSdk.orNull?.toInt()
-        targetSdk = libs.versions.androidTargetSdk.orNull?.toInt()
-
-        versionCode = 1
-        versionName = "1.0"
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlin {
-        jvmToolchain(11)
+    kotlinOptions {
+        val warningsAsErrors: String? by project
+        allWarningsAsErrors = warningsAsErrors.toBoolean()
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-opt-in=kotlin.RequiresOptIn",
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-opt-in=kotlinx.coroutines.FlowPreview",
+        )
     }
 }

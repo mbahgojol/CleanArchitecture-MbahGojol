@@ -1,3 +1,4 @@
+import com.mbahgojol.convention.configureKotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.configurationcache.extensions.capitalized
@@ -19,7 +20,6 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
         extensions.configure<KotlinMultiplatformExtension> {
             targetHierarchy.default()
 
-            jvm()
             if (pluginManager.hasPlugin("com.android.library")) {
                 android()
             }
@@ -43,8 +43,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
                     compilationUnit.linkerOpts("-lsqlite3")
                 }
 
-//            configureSpotless()
-//            configureKotlin()
+            configureKotlin()
         }
     }
 }

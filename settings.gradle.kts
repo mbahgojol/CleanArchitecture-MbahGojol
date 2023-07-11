@@ -22,4 +22,5 @@ rootProject.name = "MyApplication"
 include(":androidApp")
 include(":shared")
 include(":core")
+include(":core:designsystem")
 include(":core:common")
