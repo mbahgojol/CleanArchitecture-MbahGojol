@@ -6,8 +6,7 @@ import com.mbahgojol.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.get
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.gradle.kotlin.dsl.dependencies
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -17,26 +16,21 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 apply("org.gradle.android.cache-fix")
             }
 
-            extensions.configure<KotlinMultiplatformExtension> {
-                android()
-                sourceSets["androidMain"].apply {
-                    dependencies.apply {
-                        add("implementation", platform(libs.findLibrary("kotlin.bom").get()))
-                        add("implementation", libs.findLibrary("androidx.core").get())
-                        add("implementation", libs.findLibrary("androidx.appcompat").get())
-                        add("implementation", libs.findLibrary("google.android.material").get())
-                        add(
-                            "implementation",
-                            libs.findLibrary("androidx.lifecycle.runtime.ktx").get(),
-                        )
-                    }
-                }
-            }
-
             extensions.configure<ApplicationExtension> {
                 configureAndroid()
                 configureDefaultConfig(this)
                 configureBuildTypes(this)
+
+                dependencies {
+                    add("implementation", platform(libs.findLibrary("kotlin.bom").get()))
+                    add("implementation", libs.findLibrary("androidx.core").get())
+                    add("implementation", libs.findLibrary("androidx.appcompat").get())
+                    add("implementation", libs.findLibrary("google.android.material").get())
+                    add(
+                        "implementation",
+                        libs.findLibrary("androidx.lifecycle.runtime.ktx").get(),
+                    )
+                }
             }
         }
     }

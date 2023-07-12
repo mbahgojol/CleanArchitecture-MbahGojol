@@ -1,25 +1,21 @@
-import com.mbahgojol.convention.androidMain
-
 plugins {
-    kotlin("multiplatform")
     id("mbahgojol.android.application")
+    id("mbahgojol.kotlin.android")
     id("mbahgojol.android.application.compose")
     id("mbahgojol.android.application.flavors")
-    id("mbahgojol.android.application.jacoco")
-    id("mbahgojol.android.hilt")
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.composeMultiplatform)
 }
 
-kotlin {
-    androidMain {
-        dependencies {
-            implementation(projects.presentation)
-        }
-    }
+dependencies {
+    implementation(libs.androidx.activity.activity)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.kotlin.coroutines.android)
+    implementation(projects.presentation)
 }
 
 android {
     namespace = "com.myapplication"
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     kotlinOptions {
         val warningsAsErrors: String? by project

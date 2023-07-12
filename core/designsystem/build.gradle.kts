@@ -3,8 +3,7 @@ import com.mbahgojol.convention.commonMain
 plugins {
     kotlin("multiplatform")
     id("mbahgojol.android.library")
-    // todo implement compose yang support multiplatform
-//    id("mbahgojol.android.library.compose")
+    alias(libs.plugins.composeMultiplatform)
 }
 
 kotlin {
@@ -16,7 +15,13 @@ kotlin {
 
     commonMain {
         dependencies {
-
+            implementation(compose.ui)
+            implementation(compose.foundation)
+            implementation(compose.material)
+            implementation(compose.materialIconsExtended)
+            implementation(compose.animation)
+            implementation(compose.material3)
+            implementation(compose.material)
         }
     }
 }

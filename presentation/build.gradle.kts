@@ -3,8 +3,8 @@ import com.mbahgojol.convention.commonMain
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
+    alias(libs.plugins.composeMultiplatform)
     id("mbahgojol.android.library")
-    id("mbahgojol.android.library.compose")
 }
 
 kotlin {
