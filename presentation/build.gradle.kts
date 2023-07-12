@@ -1,6 +1,4 @@
 import com.mbahgojol.convention.commonMain
-import org.jetbrains.kotlin.gradle.plugin.mpp.Framework
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
@@ -40,8 +38,8 @@ kotlin {
             @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
 
-//                implementation(projects.core.designsystem)
-//                api(projects.core.common)
+            api(projects.core.common)
+            api(projects.core.designsystem)
         }
     }
 

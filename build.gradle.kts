@@ -1,7 +1,8 @@
+import com.android.build.gradle.internal.lint.AndroidLintTask
+
 plugins {
     // this is necessary to avoid the plugins to be loaded multiple times
     // in each subproject's classloader
-    alias(libs.plugins.multiplatform) apply false
     alias(libs.plugins.composeMultiplatform) apply false
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
@@ -19,3 +20,42 @@ plugins {
 }
 
 apply(from = File("gradle/dependencyGraph.gradle"))
+
+allprojects {
+    tasks.withType<AndroidLintTask> {
+        tasks.findByName("kspTestKotlin")?.let {
+            dependsOn(it)
+        }
+    }
+    tasks.withType<com.android.build.gradle.internal.lint.AndroidLintAnalysisTask> {
+        tasks.findByName("kspTestKotlin")?.let {
+            dependsOn(it)
+        }
+    }
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask<*>>().configureEach {
+        compilerOptions {
+            // Treat all Kotlin warnings as errors
+            allWarningsAsErrors.set(true)
+
+            // Enable experimental coroutines APIs, including Flow
+            /*freeCompilerArgs.addAll(
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                "-opt-in=kotlinx.coroutines.FlowPreview",
+            )*/
+
+            if (project.hasProperty("tivi.enableComposeCompilerReports")) {
+                freeCompilerArgs.addAll(
+                    "-P",
+                    "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" +
+                        project.buildDir.absolutePath + "/compose_metrics",
+                )
+                freeCompilerArgs.addAll(
+                    "-P",
+                    "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" +
+                        project.buildDir.absolutePath + "/compose_metrics",
+                )
+            }
+        }
+    }
+}

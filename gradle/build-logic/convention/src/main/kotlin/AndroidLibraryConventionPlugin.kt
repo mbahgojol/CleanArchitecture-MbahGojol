@@ -3,11 +3,9 @@ import com.mbahgojol.convention.configureAndroid
 import com.mbahgojol.convention.configureBuildTypes
 import com.mbahgojol.convention.configureDefaultConfig
 import com.mbahgojol.convention.configureFlavors
-import com.mbahgojol.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -15,18 +13,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.library")
                 apply("org.gradle.android.cache-fix")
-            }
-
-            extensions.configure<KotlinMultiplatformExtension> {
-                android()
-                sourceSets.getByName("androidMain") {
-                    dependencies.apply {
-                        add("implementation", libs.findLibrary("timber").get())
-                        add("implementation", libs.findLibrary("androidx.core").get())
-                        add("implementation", libs.findLibrary("androidx.appcompat").get())
-                        add("implementation", libs.findLibrary("google.android.material").get())
-                    }
-                }
             }
 
             extensions.configure<LibraryExtension> {

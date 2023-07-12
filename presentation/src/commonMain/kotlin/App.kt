@@ -12,26 +12,32 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.gojol.common.TestClassCommon
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
+    val common = TestClassCommon()
+    common.testAh()
+
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Hello, World!") }
+        var greetingText by remember { mutableStateOf(TestClassCommon.text) }
         var showImage by remember { mutableStateOf(false) }
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = {
-                greetingText = "Hello, ${getPlatformName()}"
-                showImage = !showImage
-            }) {
+            Button(
+                onClick = {
+                    greetingText = "Hello, ${getPlatformName()}"
+                    showImage = !showImage
+                },
+            ) {
                 Text(greetingText)
             }
             AnimatedVisibility(showImage) {
                 Image(
                     painterResource("compose-multiplatform.xml"),
-                    null
+                    null,
                 )
             }
         }

@@ -20,3 +20,6 @@ fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.androidMain(blo
 
 fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.commonMain(block: KotlinSourceSet.() -> Unit) =
     sourceSets.getByName("commonMain", block)
+
+fun org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension.iosMain(block: KotlinSourceSet.() -> Unit) =
+    sourceSets.getByName("iosMain", block)
