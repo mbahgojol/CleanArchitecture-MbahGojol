@@ -20,7 +20,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "MyApplication"
 
 include(":androidApp")
-include(":shared")
+include(":presentation")
 include(":core")
 include(":core:designsystem")
 include(":core:common")

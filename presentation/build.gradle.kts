@@ -1,4 +1,6 @@
 import com.mbahgojol.convention.commonMain
+import org.jetbrains.kotlin.gradle.plugin.mpp.Framework
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
@@ -21,7 +23,7 @@ kotlin {
         ios.deploymentTarget = "14.1"
         podfile = project.file("../iosApp/Podfile")
         framework {
-            baseName = "shared"
+            baseName = "presentation"
             isStatic = true
         }
         extraSpecAttributes["resources"] =

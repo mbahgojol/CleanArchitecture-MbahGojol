@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("mbahgojol.android.library")
     id("mbahgojol.android.library.compose")
-    id("mbahgojol.android.library.jacoco")
+//    id("mbahgojol.android.library.jacoco")
 }
 
 android {

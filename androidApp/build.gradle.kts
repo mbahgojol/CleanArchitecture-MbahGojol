@@ -12,7 +12,7 @@ plugins {
 kotlin {
     androidMain {
         dependencies {
-            implementation(projects.shared)
+            implementation(projects.presentation)
         }
     }
 }
