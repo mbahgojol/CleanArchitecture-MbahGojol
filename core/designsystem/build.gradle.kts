@@ -21,7 +21,7 @@ kotlin {
             implementation(compose.materialIconsExtended)
             implementation(compose.animation)
             implementation(compose.material3)
-            implementation(compose.material)
+            implementation(compose.runtime)
         }
     }
 }
