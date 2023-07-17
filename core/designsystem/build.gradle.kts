@@ -1,18 +1,12 @@
 import com.mbahgojol.convention.commonMain
 
 plugins {
-    kotlin("multiplatform")
     id("mbahgojol.android.library")
+    id("mbahgojol.kotlin.multiplatform")
     alias(libs.plugins.composeMultiplatform)
 }
 
 kotlin {
-    android()
-    ios()
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-
     commonMain {
         dependencies {
             implementation(compose.ui)
@@ -21,7 +15,6 @@ kotlin {
             implementation(compose.materialIconsExtended)
             implementation(compose.animation)
             implementation(compose.material3)
-            implementation(compose.runtime)
         }
     }
 }

@@ -1,8 +1,8 @@
 import com.mbahgojol.convention.commonMain
 
 plugins {
-    kotlin("multiplatform")
     id("mbahgojol.android.library")
+    id("mbahgojol.kotlin.multiplatform")
     alias(libs.plugins.composeMultiplatform)
     // todo implement compose yang support multiplatform
 //    id("mbahgojol.android.library.compose")
@@ -12,12 +12,6 @@ plugins {
 }
 
 kotlin {
-    android()
-    ios()
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-
     commonMain {
         dependencies {
             implementation(compose.ui)
