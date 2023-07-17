@@ -11,6 +11,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("mbahgojol.android.library")
+                apply("mbahgojol.kotlin.android")
                 apply("mbahgojol.android.hilt")
             }
 

@@ -1,6 +1,4 @@
 
-X
-(core/common/src/main/AndroidManifest.xml,5/0/50e67f7939fcb609df4b2e97c5fb67bd7d576911
 s
 Ccore/common/src/main/java/com/mbahgojol/common/state/ResultState.kt,c/c/cc43388e2881b85c8bbf95dbd1fe2175c0e6ae79
 o
@@ -35,14 +33,10 @@ x
 Hcore/designsystem/src/main/java/com/mbahgojol/designsystem/theme/Type.kt,d/1/d15863c5041dd463c2d29530189d3eb2c919c1a8
 ’
 bgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/SecretsPlugin.kt,b/a/ba56f609e9207d82b341299ec427c5a5fc40c0ad
-M
-feature/home/build.gradle.kts,b/e/be4e288f08b8cb3c35191b1a7d3e737f2a0057e5
 
 _gradle/build-logic/convention/src/main/kotlin/com/mbahgojol/secrets_gradle_plugin/Extensions.kt,b/9/b9f557a002282b53cc3df3cab706df0ffa9a7457
 €
 Pgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/Jacoco.kt,f/4/f4bef2d7e73b476480eed0ccaea5b72937625e09
-…
-Ugradle/build-logic/convention/src/main/kotlin/AndroidLibraryJacocoConventionPlugin.kt,d/b/db21d04ecb551152fa5db3e9a01f8744fac64b00
 P
  app/src/stg/google-services.json,f/d/fd9b632503cb02a1d3e8f531214a3245d6b801c0
 E
@@ -59,8 +53,6 @@ T
 $gradle/build-logic/gradle.properties,9/3/9366009594a7f46b8bef97ef5c38595ba51895a9
 M
 gradle/build-logic/.gitignore,9/6/96366a66a022f64d6d4685f55ba60c21069ab98e
-X
-(gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 >
 .gitattributes,2/4/24139dae656713ba861751fb2c2ac38839349a7a
 M
@@ -71,14 +63,8 @@ x
 Hcore/network/src/main/java/com/mbahgojol/network/AuthTokenInterceptor.kt,f/5/f5022db4f7f80b87ee306425ecf4b632797c2f3f
 G
 core/network/.gitignore,0/f/0fbc52b5fcc95daa9370f34940fd942f94249b8c
-‹
-[gradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/ProjectExtensions.kt,9/3/93447fe8bf867fb6727f9167b249725c813780cc
-L
-core/common/build.gradle.kts,3/3/33faeab8056c945e58d920d723c6a36420381b51
 F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
-M
-core/network/build.gradle.kts,2/9/29b8be2dc5289918ec30fe99fcc72fa2d08c55d3
 q
 Acore/network/src/main/java/com/mbahgojol/network/AppHttpClient.kt,a/4/a488c47eea07de69d71ed9889d2254224c38f38c
 :
@@ -96,3 +82,19 @@ q
 Acore/common/src/main/java/com/mbahgojol/common/di/CommonModule.kt,9/8/982cfa219c72f15077f670ec7c8f3d02a357cd7e
 i
 9core/domain/src/main/java/com/mbahgojol/domain/GetNews.kt,a/0/a03e60648da6ddbab1bd7126db4364fd26e0a5a8
+V
+&gradle/build-logic/settings.gradle.kts,d/d/dd4637bf08517b825e427e953e2f46e7ed7fce61
+ƒ
+Sgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/AppFlavor.kt,e/e/ee2e37a2519cd7d336cfd21a145e4c73fe1ba6ed
+„
+Tgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/KtorClient.kt,3/a/3a496ca8099a4c076a0a5b50d9bd788e14f5a33f
+q
+Aapp/src/main/java/com/mbahgojol/cleanarchitecture/MainActivity.kt,8/5/85fb85fa80fb8f2309c3397e80c8342dfe2ed4ad
+A
+gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
+C
+settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
+X
+(gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+X
+(core/common/src/main/AndroidManifest.xml,5/0/50e67f7939fcb609df4b2e97c5fb67bd7d576911

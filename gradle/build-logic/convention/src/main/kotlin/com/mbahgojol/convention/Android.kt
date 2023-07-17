@@ -3,6 +3,7 @@ package com.mbahgojol.convention
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -10,7 +11,7 @@ import org.gradle.kotlin.dsl.dependencies
 
 fun Project.configureAndroid() {
     android {
-        compileSdkVersion(libs.compileSdkVersion)
+        setCompileSdkVersion(libs.compileSdkVersion)
 
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_11
@@ -77,6 +78,9 @@ internal fun Project.configureDefaultConfig(extension: ApplicationExtension) {
         defaultConfig {
             minSdk = libs.minSdkVersion
             targetSdk = libs.targetSdkVersion
+
+            versionCode = libs.versionCode
+            versionName = libs.versionName
 
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             vectorDrawables {

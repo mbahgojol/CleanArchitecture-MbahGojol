@@ -13,3 +13,5 @@ val VersionCatalog.compileSdkVersion
 
 val VersionCatalog.minSdkVersion get() = findVersion("androidMinSdk").get().toString().toInt()
 val VersionCatalog.targetSdkVersion get() = findVersion("androidTargetSdk").get().toString().toInt()
+val VersionCatalog.versionCode get() = findVersion("versionCode").get().toString().toInt()
+val VersionCatalog.versionName get() = findVersion("versionName").get().toString()

@@ -82,6 +82,14 @@ gradlePlugin {
             id = "mbahgojol.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
         }
+        register("kotlinAndroid") {
+            id = "mbahgojol.kotlin.android"
+            implementationClass = "KotlinAndroidConventionPlugin"
+        }
+        register("kotlinMultiplatform") {
+            id = "mbahgojol.kotlin.multiplatform"
+            implementationClass = "KotlinMultiplatformConventionPlugin"
+        }
     }
 }
 

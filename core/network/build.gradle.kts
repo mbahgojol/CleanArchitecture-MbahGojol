@@ -19,11 +19,6 @@ secrets {
 }
 
 dependencies {
-    /*implementation("io.ktor:ktor-client-android:1.5.0")
-    implementation("io.ktor:ktor-client-serialization:1.5.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
-    implementation("io.ktor:ktor-client-logging-jvm:1.5.0")*/
-
     implementation(libs.okhttp.loggingInterceptor)
     debugImplementation(libs.chucker.library)
     releaseImplementation(libs.chucker.library.no.op)

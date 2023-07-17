@@ -16,3 +16,29 @@ plugins {
 }
 
 apply(from = File("gradle/dependencyGraph.gradle"))
+
+allprojects {
+    tasks.withType<com.android.build.gradle.internal.lint.AndroidLintTask> {
+        tasks.findByName("kspTestKotlin")?.let {
+            dependsOn(it)
+        }
+    }
+    tasks.withType<com.android.build.gradle.internal.lint.AndroidLintAnalysisTask> {
+        tasks.findByName("kspTestKotlin")?.let {
+            dependsOn(it)
+        }
+    }
+
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask<*>>().configureEach {
+        compilerOptions {
+            // Treat all Kotlin warnings as errors
+            allWarningsAsErrors.set(true)
+
+            // Enable experimental coroutines APIs, including Flow
+            freeCompilerArgs.addAll(
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                "-opt-in=kotlinx.coroutines.FlowPreview",
+            )
+        }
+    }
+}
