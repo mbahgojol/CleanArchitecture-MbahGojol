@@ -24,11 +24,13 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 configureBuildTypes(this)
                 configureFlavors(this)
 
-                dependencies {
-                    add("implementation", libs.findLibrary("timber").get())
-                    add("implementation", libs.findLibrary("androidx.core").get())
-                    add("implementation", libs.findLibrary("androidx.appcompat").get())
-                    add("implementation", libs.findLibrary("google.android.material").get())
+                if (!pluginManager.hasPlugin("org.jetbrains.kotlin.multiplatform")) {
+                    dependencies {
+                        add("implementation", libs.findLibrary("timber").get())
+                        add("implementation", libs.findLibrary("androidx.core").get())
+                        add("implementation", libs.findLibrary("androidx.appcompat").get())
+                        add("implementation", libs.findLibrary("google.android.material").get())
+                    }
                 }
             }
         }

@@ -15,12 +15,6 @@ android {
     }
 
     namespace = "com.mbahgojol.cleanarchitecture"
-
-    defaultConfig {
-        applicationId = "com.mbahgojol.cleanarchitecture"
-        versionCode = 1
-        versionName = "1.0"
-    }
 }
 
 dependencies {

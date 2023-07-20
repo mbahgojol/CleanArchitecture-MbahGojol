@@ -13,9 +13,14 @@ plugins {
     alias(libs.plugins.hilt) apply false
     // please see for support library with ksp https://kotlinlang.org/docs/ksp-overview.html#supported-libraries
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.multiplatform) apply false
 }
 
 apply(from = File("gradle/dependencyGraph.gradle"))
+
+tasks.register("clean", Delete::class) {
+    delete(rootProject.buildDir)
+}
 
 allprojects {
     tasks.withType<com.android.build.gradle.internal.lint.AndroidLintTask> {
@@ -35,10 +40,10 @@ allprojects {
             allWarningsAsErrors.set(true)
 
             // Enable experimental coroutines APIs, including Flow
-            freeCompilerArgs.addAll(
+            /*freeCompilerArgs.addAll(
                 "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
                 "-opt-in=kotlinx.coroutines.FlowPreview",
-            )
+            )*/
         }
     }
 }

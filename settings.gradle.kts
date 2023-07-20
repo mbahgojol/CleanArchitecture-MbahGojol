@@ -16,7 +16,7 @@ dependencyResolutionManagement {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "CleanArchitecture-MbahGojol"
+rootProject.name = "CleanArchitecture-KMM"
 include (":app")
 include(":core")
 include(":core:designsystem")
@@ -28,3 +28,4 @@ include(":core:database")
 include(":core:model")
 include(":feature")
 include(":feature:home")
+include(":presentation")
