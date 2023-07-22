@@ -64,12 +64,6 @@ q
 Aapp/src/main/java/com/mbahgojol/cleanarchitecture/MainActivity.kt,8/5/85fb85fa80fb8f2309c3397e80c8342dfe2ed4ad
 C
 settings.gradle.kts,7/4/749edfcc96398253e5b3416184e95c46621da850
-ƒ
-Spresentation/src/androidMain/kotlin/com/mbahgojol/myapplication/Platform.android.kt,3/d/3d7a5bc8689405517bf4b21fe77aad7ba5dc5a82
-z
-Jpresentation/src/commonMain/kotlin/com/mbahgojol/myapplication/Greeting.kt,d/7/d75444b85a849e9d9193e7dc3be964567e2e6ff9
-z
-Jpresentation/src/commonMain/kotlin/com/mbahgojol/myapplication/Platform.kt,0/4/04361df95b039938ff26ef1aac3849337d289e3e
 {
 Kpresentation/src/iosMain/kotlin/com/mbahgojol/myapplication/Platform.ios.kt,2/b/2bfe23ecedeb47add5395a20c3056c6505000770
 p
