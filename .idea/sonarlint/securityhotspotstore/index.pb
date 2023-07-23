@@ -83,8 +83,6 @@ I
 Lgradle/build-logic/convention/src/main/kotlin/AndroidKtorConventionPlugin.kt,b/3/b3df914b5822564d4a64e4254c3d7e9cbbc93f3f
 „
 Tgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/KtorClient.kt,3/a/3a496ca8099a4c076a0a5b50d9bd788e14f5a33f
-v
-Fcore/model/src/main/kotlin/com/mbahgojol/model/dtos/ResponseNewsDto.kt,c/6/c65d142c2a2c2c734f737409f192802e2ea2140a
 K
 core/model/build.gradle.kts,9/3/934dbdec0dfe573cbf98bf8707c0766a31a96299
 J
