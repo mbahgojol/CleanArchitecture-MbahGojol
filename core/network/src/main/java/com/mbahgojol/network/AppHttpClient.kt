@@ -17,9 +17,9 @@ import io.ktor.client.plugins.observer.ResponseObserver
 import io.ktor.client.request.header
 import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
+import java.util.concurrent.TimeUnit
 import okhttp3.logging.HttpLoggingInterceptor
 import timber.log.Timber
-import java.util.concurrent.TimeUnit
 
 @Module
 @InstallIn(SingletonComponent::class)
