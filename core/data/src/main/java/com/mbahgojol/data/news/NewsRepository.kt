@@ -1,7 +1,7 @@
 package com.mbahgojol.data.news
 
-import com.mbahgojol.model.dtos.ResponseNewsDto
+import com.mbahgojol.model.dtos.ArticleDto
 
 interface NewsRepository {
-    suspend fun getNews(): ResponseNewsDto
+    suspend fun getNews(): List<ArticleDto>
 }

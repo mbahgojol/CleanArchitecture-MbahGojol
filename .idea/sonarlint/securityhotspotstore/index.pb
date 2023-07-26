@@ -49,8 +49,6 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 X
 (core/common/src/main/AndroidManifest.xml,5/0/50e67f7939fcb609df4b2e97c5fb67bd7d576911
-s
-Ccore/common/src/main/java/com/mbahgojol/common/exception/Failure.kt,b/8/b83ebb872b18c40e73a129c467354610bc0178b9
 D
 app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6
 q
@@ -59,8 +57,6 @@ w
 Gapp/src/main/java/com/mbahgojol/cleanarchitecture/AndroidApplication.kt,8/d/8d7b03528ad5aa6c558913a27abf75f4e0ce1bde
 k
 ;core/data/src/main/java/com/mbahgojol/data/di/DataModule.kt,3/3/33601c62d924275f82bccae244950b7ad63b6dbd
-L
-core/common/build.gradle.kts,3/3/33faeab8056c945e58d920d723c6a36420381b51
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 ^
@@ -75,15 +71,11 @@ Lgradle/build-logic/convention/src/main/kotlin/AndroidKtorConventionPlugin.kt,b
 Tgradle/build-logic/convention/src/main/kotlin/com/mbahgojol/convention/KtorClient.kt,3/a/3a496ca8099a4c076a0a5b50d9bd788e14f5a33f
 K
 core/model/build.gradle.kts,9/3/934dbdec0dfe573cbf98bf8707c0766a31a96299
-J
-core/data/build.gradle.kts,f/4/f4478630ebacf5eb78d8fddbf2b884e78aef0d50
 u
 Ecore/common/src/main/java/com/mbahgojol/common/logging/ReleaseTree.kt,4/4/44e2477d5a83a0377bac534f1209483d7ca1cf65
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-v
-Fcore/model/src/main/kotlin/com/mbahgojol/model/dtos/ResponseNewsDto.kt,c/6/c65d142c2a2c2c734f737409f192802e2ea2140a
 z
 Jcore/model/src/main/kotlin/com/mbahgojol/model/entities/ArticleEntities.kt,a/6/a6ef0a49c5e5410166018b02c13645d7de84c497
 R
@@ -102,7 +94,3 @@ q
 Acore/network/src/main/java/com/mbahgojol/network/AppHttpClient.kt,a/4/a488c47eea07de69d71ed9889d2254224c38f38c
 w
 Gcore/common/src/main/java/com/mbahgojol/common/network/NetworkHelper.kt,6/c/6c8eca243aabb3cf6392fbc1998e09843fb44e5e
-q
-Acore/data/src/main/java/com/mbahgojol/data/news/NewsDataSource.kt,c/4/c408aef434ac4dd356cd3b19be0d3e82b3c91691
-u
-Ecore/data/src/main/java/com/mbahgojol/data/news/NewsRepositoryImpl.kt,7/0/70ec44487e7b9f0789361fdbe9137bf35e4ef1b4

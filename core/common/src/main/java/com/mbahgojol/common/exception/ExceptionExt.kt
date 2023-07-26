@@ -26,6 +26,7 @@ suspend fun <T> requestData(requestData: suspend () -> T): T {
     return try {
         requestData.invoke()
     } catch (throwable: Throwable) {
+        throwable.printStackTrace()
         throw throwable.toCustomExceptions()
     }
 }
