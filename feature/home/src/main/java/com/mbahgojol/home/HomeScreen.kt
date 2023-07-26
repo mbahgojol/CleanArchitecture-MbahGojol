@@ -25,7 +25,7 @@ import com.mbahgojol.common.state.collectAsUiState
 @Composable
 fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     LaunchedEffect(Unit) {
-        viewModel.getNews()
+        viewModel.fetchNews()
     }
 
     val listNewsUiState by viewModel.newsListState.collectAsUiState()

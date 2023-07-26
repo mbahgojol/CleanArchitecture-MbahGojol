@@ -11,11 +11,9 @@ import javax.inject.Inject
 class GetNews @Inject constructor(
     private val newsRepository: NewsRepository,
     private val dispatchers: AppDispatchers,
-) : Interactor<GetNewsParams, List<ArticleEntities>>() {
-    override suspend fun doWork(params: GetNewsParams): List<ArticleEntities> =
+) : Interactor<Unit, List<ArticleEntities>>() {
+    override suspend fun doWork(params: Unit): List<ArticleEntities> =
         newsRepository.getNews().map {
             it.toArticleEntities()
         }.addDispatcher(dispatchers.io)
 }
-
-class GetNewsParams

@@ -2,12 +2,12 @@ package com.mbahgojol.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.mbahgojol.common.interactor.invoke
 import com.mbahgojol.common.state.UiState
 import com.mbahgojol.common.state.setValue
 import com.mbahgojol.common.state.withLoading
 import com.mbahgojol.domain.GetNews
-import com.mbahgojol.domain.GetNewsParams
-import com.mbahgojol.model.dtos.ResponseNewsDto
+import com.mbahgojol.model.entities.ArticleEntities
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -18,13 +18,13 @@ class HomeViewModel @Inject constructor(
     private val getNews: GetNews,
 ) : ViewModel() {
 
-    private val _newsListState = MutableStateFlow(UiState<ResponseNewsDto>())
+    private val _newsListState = MutableStateFlow(UiState<List<ArticleEntities>>())
     val newsListState
         get() = _newsListState.withLoading(getNews.inProgress)
 
-    fun getNews() {
+    fun fetchNews() {
         viewModelScope.launch {
-            val result = getNews(GetNewsParams())
+            val result = getNews.invoke()
             _newsListState.setValue(result)
         }
     }

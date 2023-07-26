@@ -6,7 +6,6 @@ import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
 import kotlinx.coroutines.CancellationException
-import timber.log.Timber
 
 fun Throwable.toCustomExceptions() = when (this) {
     is ServerResponseException -> HttpErrorInternalServerError()
@@ -26,7 +25,6 @@ suspend fun <T> requestData(requestData: suspend () -> T): T {
     return try {
         requestData.invoke()
     } catch (throwable: Throwable) {
-        throwable.printStackTrace()
         throw throwable.toCustomExceptions()
     }
 }
@@ -37,7 +35,6 @@ suspend fun <T> NetworkHelper.safeNetworkCall(requestData: suspend () -> T): T {
             try {
                 requestData.invoke()
             } catch (e: Exception) {
-                e.printStackTrace()
                 throw e
             }
         }

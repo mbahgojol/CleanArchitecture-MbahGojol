@@ -76,8 +76,6 @@ Ecore/common/src/main/java/com/mbahgojol/common/logging/ReleaseTree.kt,4/4/44e2
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-z
-Jcore/model/src/main/kotlin/com/mbahgojol/model/entities/ArticleEntities.kt,a/6/a6ef0a49c5e5410166018b02c13645d7de84c497
 R
 "core/designsystem/build.gradle.kts,4/8/48c417db29ed7b936ecf7ac2b953f54da71f649a
 @
