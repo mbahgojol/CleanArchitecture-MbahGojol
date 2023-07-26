@@ -3,8 +3,8 @@ package com.mbahgojol.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mbahgojol.common.state.UiState
-import com.mbahgojol.common.state.mergeWithLoading
 import com.mbahgojol.common.state.setValue
+import com.mbahgojol.common.state.withLoading
 import com.mbahgojol.domain.GetNews
 import com.mbahgojol.domain.GetNewsParams
 import com.mbahgojol.model.dtos.ResponseNewsDto
@@ -20,7 +20,7 @@ class HomeViewModel @Inject constructor(
 
     private val _newsListState = MutableStateFlow(UiState<ResponseNewsDto>())
     val newsListState
-        get() = _newsListState.mergeWithLoading(getNews.inProgress)
+        get() = _newsListState.withLoading(getNews.inProgress)
 
     fun getNews() {
         viewModelScope.launch {

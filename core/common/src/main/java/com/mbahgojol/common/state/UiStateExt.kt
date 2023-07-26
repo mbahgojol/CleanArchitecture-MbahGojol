@@ -80,7 +80,7 @@ fun <T> MutableStateFlow<UiState<T>>.setValue(result: Result<T>) {
     }
 }
 
-fun <T> Flow<UiState<T>>.mergeWithLoading(inProgress: Flow<Boolean>): Flow<UiState<T>> =
+fun <T> Flow<UiState<T>>.withLoading(inProgress: Flow<Boolean>): Flow<UiState<T>> =
     inProgress.flatMapMerge { loading ->
         map {
             it.copy(isLoading = loading)
