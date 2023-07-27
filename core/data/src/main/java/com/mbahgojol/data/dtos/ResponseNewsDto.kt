@@ -1,4 +1,4 @@
-package com.mbahgojol.model.dtos
+package com.mbahgojol.data.dtos
 
 import com.google.gson.annotations.SerializedName
 

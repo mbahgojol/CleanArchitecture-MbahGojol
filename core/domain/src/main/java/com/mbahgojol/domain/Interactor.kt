@@ -1,6 +1,6 @@
 @file:Suppress("unused", "SpellCheckingInspection")
 
-package com.mbahgojol.common.interactor
+package com.mbahgojol.domain
 
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.minutes

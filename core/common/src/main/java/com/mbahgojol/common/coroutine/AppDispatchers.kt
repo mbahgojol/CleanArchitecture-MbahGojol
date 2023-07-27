@@ -21,8 +21,8 @@ class AppDispatchersImpl : AppDispatchers {
 }
 
 
-suspend fun <T> T.addDispatcher(coroutineDispatcher: CoroutineDispatcher): T {
+suspend fun <T> T.dispatcherOn(coroutineDispatcher: CoroutineDispatcher): T {
     return withContext(coroutineDispatcher) {
-        this@addDispatcher
+        this@dispatcherOn
     }
 }

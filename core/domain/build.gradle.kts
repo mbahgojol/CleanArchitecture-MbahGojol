@@ -14,6 +14,7 @@ dependencies {
     implementation(projects.core.database)
     implementation(projects.core.model)
     implementation(projects.core.data)
+    implementation(libs.kotlinx.atomicfu)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

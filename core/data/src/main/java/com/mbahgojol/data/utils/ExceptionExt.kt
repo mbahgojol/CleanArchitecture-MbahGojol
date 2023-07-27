@@ -1,11 +1,18 @@
 @file:Suppress("unused")
-package com.mbahgojol.common.exception
+package com.mbahgojol.data.utils
 
+import com.mbahgojol.common.exception.GenericError
+import com.mbahgojol.common.exception.HttpError
+import com.mbahgojol.common.exception.HttpErrorBadRequest
+import com.mbahgojol.common.exception.HttpErrorForbidden
+import com.mbahgojol.common.exception.HttpErrorInternalServerError
+import com.mbahgojol.common.exception.HttpErrorNotFound
+import com.mbahgojol.common.exception.HttpErrorUnauthorized
+import com.mbahgojol.common.exception.NoInternetConnection
 import com.mbahgojol.common.network.NetworkHelper
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
-import kotlinx.coroutines.CancellationException
 
 fun Throwable.toCustomExceptions() = when (this) {
     is ServerResponseException -> HttpErrorInternalServerError()
@@ -40,15 +47,5 @@ suspend fun <T> NetworkHelper.safeNetworkCall(requestData: suspend () -> T): T {
         }
 
         false -> throw NoInternetConnection()
-    }
-}
-
-inline fun Result<*>.onException(
-    block: (Throwable) -> Unit,
-) {
-    val e = exceptionOrNull()
-    when {
-        e is CancellationException -> throw e
-        e != null -> block(e)
     }
 }

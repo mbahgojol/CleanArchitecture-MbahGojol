@@ -1,4 +1,4 @@
-package com.mbahgojol.model.dtos
+package com.mbahgojol.data.dtos
 
 import com.google.gson.annotations.SerializedName
 import com.mbahgojol.model.entities.ArticleEntities
@@ -20,5 +20,5 @@ data class SourceDto(
 )
 
 fun ArticleDto.toArticleEntities() = ArticleEntities(
-    author ?: "", content, description, publishedAt, title, url, urlToImage ?: "",
+    author.orEmpty(), content, description, publishedAt, title, url, urlToImage.orEmpty(),
 )

@@ -14,7 +14,6 @@ dependencies {
     implementation(libs.androidx.paging.runtime.ktx)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
-    implementation(libs.kotlinx.atomicfu)
     implementation(libs.gson)
 
     testImplementation(libs.junit)
