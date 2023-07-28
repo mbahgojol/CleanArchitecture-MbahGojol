@@ -54,7 +54,6 @@ captures/
 
 app/src/dev/google-services.json
 app/src/prod/google-services.json
-app/src/prod/keystore_test.jks
 app/src/stg/google-services.json
 */google-services.json
 *.jks
