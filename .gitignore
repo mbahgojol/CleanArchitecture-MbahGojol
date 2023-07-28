@@ -51,3 +51,6 @@ _sandbox
 
 # Android Studio captures folder
 captures/
+
+*/google-services.json
+*.jks
