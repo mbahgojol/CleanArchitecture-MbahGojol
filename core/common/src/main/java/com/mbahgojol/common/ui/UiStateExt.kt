@@ -5,6 +5,7 @@ package com.mbahgojol.common.ui
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.mbahgojol.common.result.suspendRunCatching
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapMerge
@@ -79,6 +80,17 @@ fun <T> MutableStateFlow<UiState<T>>.setValue(result: Result<T>) {
     }
 }
 
+suspend fun <T> MutableStateFlow<UiState<T>>.callRequest(block: suspend () -> T) {
+    loading()
+    suspendRunCatching {
+        block()
+    }.onFailure {
+        error(it.message.toString())
+    }.onSuccess {
+        success(it)
+    }
+}
+
 fun <T> Flow<UiState<T>>.withLoading(inProgress: Flow<Boolean>): Flow<UiState<T>> =
     inProgress.flatMapMerge { loading ->
         map {
@@ -90,3 +102,5 @@ fun <T> Flow<UiState<T>>.withLoading(inProgress: Flow<Boolean>): Flow<UiState<T>
 fun <T> Flow<UiState<T>>.collectAsUiStateWithLifecycle(): State<UiState<T>> {
     return collectAsStateWithLifecycle(UiState())
 }
+
+
