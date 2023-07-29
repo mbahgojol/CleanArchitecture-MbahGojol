@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.android.build.gradle.LibraryExtension
 import com.mbahgojol.convention.configureAndroidCompose
 import org.gradle.api.Plugin

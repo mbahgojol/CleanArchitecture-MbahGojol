@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.mbahgojol.convention.configureKotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -39,10 +41,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
 
             // Need to add linker flag for SQLite
             // See: https://github.com/touchlab/SQLiter/issues/77
-            targets
-                .filterIsInstance<KotlinNativeTarget>()
-                .flatMap { it.binaries }
-                .forEach { compilationUnit ->
+            targets.filterIsInstance<KotlinNativeTarget>().flatMap { it.binaries }.forEach { compilationUnit ->
                     compilationUnit.linkerOpts("-lsqlite3")
                 }
 
@@ -51,8 +50,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
     }
 }
 
-fun Project.addKspDependencyForAllTargets(dependencyNotation: Any) =
-    addKspDependencyForAllTargets("", dependencyNotation)
+fun Project.addKspDependencyForAllTargets(dependencyNotation: Any) = addKspDependencyForAllTargets("", dependencyNotation)
 
 fun Project.addKspTestDependencyForAllTargets(dependencyNotation: Any) =
     addKspDependencyForAllTargets("Test", dependencyNotation)
@@ -81,13 +79,10 @@ private fun Project.addKspDependencyForAllTargets(
 ) {
     val kmpExtension = extensions.getByType<KotlinMultiplatformExtension>()
     dependencies {
-        kmpExtension.targets
-            .asSequence()
-            .filter { target ->
+        kmpExtension.targets.asSequence().filter { target ->
                 // Don't add KSP for common target, only final platforms
                 target.platformType != KotlinPlatformType.common
-            }
-            .forEach { target ->
+            }.forEach { target ->
                 add(
                     "ksp${target.targetName.capitalized()}$configurationNameSuffix",
                     dependencyNotation,

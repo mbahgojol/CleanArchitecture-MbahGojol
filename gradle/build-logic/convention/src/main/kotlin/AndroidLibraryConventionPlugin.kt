@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.android.build.api.dsl.LibraryExtension
 import com.mbahgojol.convention.configureAndroid
 import com.mbahgojol.convention.configureBuildTypes
@@ -25,7 +27,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 configureFlavors(this)
 
                 dependencies {
-                    add("implementation", libs.findLibrary("timber").get())
                     add("implementation", libs.findLibrary("androidx.core").get())
                     add("implementation", libs.findLibrary("androidx.appcompat").get())
                     add("implementation", libs.findLibrary("google.android.material").get())

@@ -1,11 +1,10 @@
-@file:Suppress("unused", "ComposableNaming", "UNUSED_EXPRESSION")
+@file:Suppress("unused", "ComposableNaming")
 
-package com.mbahgojol.common.state
+package com.mbahgojol.common.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
-import androidx.compose.runtime.collectAsState
-import com.mbahgojol.common.exception.onException
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapMerge
@@ -75,7 +74,7 @@ fun <T> MutableStateFlow<UiState<T>>.loading() {
 fun <T> MutableStateFlow<UiState<T>>.setValue(result: Result<T>) {
     result.onSuccess {
         success(it)
-    }.onException {
+    }.onFailure {
         error(it.message.toString())
     }
 }
@@ -88,6 +87,6 @@ fun <T> Flow<UiState<T>>.withLoading(inProgress: Flow<Boolean>): Flow<UiState<T>
     }
 
 @Composable
-fun <T> Flow<UiState<T>>.collectAsUiState(): State<UiState<T>> {
-    return collectAsState(UiState())
+fun <T> Flow<UiState<T>>.collectAsUiStateWithLifecycle(): State<UiState<T>> {
+    return collectAsStateWithLifecycle(UiState())
 }

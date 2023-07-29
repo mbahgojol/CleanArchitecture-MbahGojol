@@ -16,10 +16,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mbahgojol.common.state.addErrorListener
-import com.mbahgojol.common.state.addLoadingListener
-import com.mbahgojol.common.state.addSuccessListener
-import com.mbahgojol.common.state.collectAsUiState
+import com.mbahgojol.common.ui.addErrorListener
+import com.mbahgojol.common.ui.addLoadingListener
+import com.mbahgojol.common.ui.addSuccessListener
+import com.mbahgojol.common.ui.collectAsUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

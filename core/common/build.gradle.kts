@@ -11,10 +11,11 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.paging.runtime.ktx)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
     implementation(libs.gson)
+    implementation(libs.timber)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

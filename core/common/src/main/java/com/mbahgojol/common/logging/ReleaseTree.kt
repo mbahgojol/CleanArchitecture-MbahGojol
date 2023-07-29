@@ -1,4 +1,4 @@
-@file:Suppress("unused", "SpellCheckingInspection")
+@file:Suppress("unused")
 
 package com.mbahgojol.common.logging
 

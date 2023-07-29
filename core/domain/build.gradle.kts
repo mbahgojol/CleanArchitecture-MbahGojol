@@ -9,9 +9,8 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.network)
+    implementation(libs.androidx.paging.runtime.ktx)
     implementation(projects.core.common)
-    implementation(projects.core.database)
     implementation(projects.core.model)
     implementation(projects.core.data)
     implementation(libs.kotlinx.atomicfu)

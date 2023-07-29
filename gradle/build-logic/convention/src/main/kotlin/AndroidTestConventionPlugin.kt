@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.android.build.gradle.TestExtension
 import com.mbahgojol.convention.libs
 import org.gradle.api.Plugin

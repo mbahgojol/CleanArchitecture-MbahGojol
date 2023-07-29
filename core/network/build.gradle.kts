@@ -19,6 +19,7 @@ secrets {
 }
 
 dependencies {
+    implementation(libs.timber)
     implementation(libs.okhttp.loggingInterceptor)
     debugImplementation(libs.chucker.library)
     releaseImplementation(libs.chucker.library.no.op)
