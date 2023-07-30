@@ -1,51 +1,57 @@
 @file:Suppress("unused")
 package com.mbahgojol.data.utils
 
-import com.mbahgojol.common.exception.GenericError
-import com.mbahgojol.common.exception.HttpError
-import com.mbahgojol.common.exception.HttpErrorBadRequest
-import com.mbahgojol.common.exception.HttpErrorForbidden
-import com.mbahgojol.common.exception.HttpErrorInternalServerError
-import com.mbahgojol.common.exception.HttpErrorNotFound
-import com.mbahgojol.common.exception.HttpErrorUnauthorized
-import com.mbahgojol.common.exception.NoInternetConnection
+import com.google.gson.JsonSyntaxException
+import com.mbahgojol.common.exceptions.HttpError
+import com.mbahgojol.common.exceptions.HttpErrorBadRequest
+import com.mbahgojol.common.exceptions.HttpErrorForbidden
+import com.mbahgojol.common.exceptions.HttpErrorInternalServerError
+import com.mbahgojol.common.exceptions.HttpErrorNotFound
+import com.mbahgojol.common.exceptions.HttpErrorRedirect
+import com.mbahgojol.common.exceptions.HttpErrorUnauthorized
+import com.mbahgojol.common.exceptions.JsonSyntaxError
+import com.mbahgojol.common.exceptions.NoInternetConnection
+import com.mbahgojol.common.exceptions.toHttpErrorResponse
 import com.mbahgojol.common.network.NetworkHelper
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
+import io.ktor.client.statement.bodyAsText
+import io.ktor.http.HttpStatusCode
 
-fun Throwable.toCustomExceptions() = when (this) {
+
+suspend fun Throwable.toHttpErrorExceptions() = when (this) {
     is ServerResponseException -> HttpErrorInternalServerError()
-    is ClientRequestException -> when (response.status.value) {
-        400 -> HttpErrorBadRequest()
-        401 -> HttpErrorUnauthorized()
-        403 -> HttpErrorForbidden()
-        404 -> HttpErrorNotFound()
-        else -> HttpError()
+    is RedirectResponseException -> HttpErrorRedirect()
+    is ClientRequestException -> {
+        val httpErrorResponse = response.bodyAsText().toHttpErrorResponse()
+        when (response.status) {
+            HttpStatusCode.BadRequest -> HttpErrorBadRequest(httpErrorResponse)
+            HttpStatusCode.Unauthorized -> HttpErrorUnauthorized(httpErrorResponse)
+            HttpStatusCode.Forbidden -> HttpErrorForbidden(httpErrorResponse)
+            HttpStatusCode.NotFound -> HttpErrorNotFound(httpErrorResponse)
+            else -> HttpError(httpErrorResponse)
+        }
     }
 
-    is RedirectResponseException -> HttpError()
-    else -> GenericError()
+    else -> this
 }
 
-suspend fun <T> requestData(requestData: suspend () -> T): T {
-    return try {
-        requestData.invoke()
-    } catch (throwable: Throwable) {
-        throw throwable.toCustomExceptions()
-    }
+suspend inline fun <T> safeRequest(
+    block: () -> T,
+): T = try {
+    block.invoke()
+} catch (e: JsonSyntaxException) {
+    throw JsonSyntaxError()
+} catch (e: Throwable) {
+    throw e.toHttpErrorExceptions()
 }
 
-suspend fun <T> NetworkHelper.safeNetworkCall(requestData: suspend () -> T): T {
-    return when (isNetworkConnected()) {
+suspend fun <T> NetworkHelper.safeNetworkCall(requestData: suspend () -> T): T =
+    when (isNetworkConnected()) {
         true -> {
-            try {
-                requestData.invoke()
-            } catch (e: Exception) {
-                throw e
-            }
+            requestData.invoke()
         }
 
         false -> throw NoInternetConnection()
     }
-}

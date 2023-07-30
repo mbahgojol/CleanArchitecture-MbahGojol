@@ -15,18 +15,18 @@ data class UiState<T>(
     val data: T? = null,
     val isLoading: Boolean = false,
     val hasError: Boolean = false,
-    val errorMessage: String? = null,
+    val errorState: ErrorState = ErrorState(),
 )
 
 @Composable
 fun <T> UiState<T>.addStateListener(
     success: @Composable (T) -> Unit,
-    error: @Composable (String) -> Unit,
+    error: @Composable (ErrorState) -> Unit,
     loading: @Composable () -> Unit = {},
 ) {
     when {
         hasError -> {
-            error(errorMessage.toString())
+            error(errorState)
         }
 
         isLoading -> {
@@ -55,17 +55,17 @@ fun <T> UiState<T>.addLoadingListener(
 
 @Composable
 fun <T> UiState<T>.addErrorListener(
-    error: @Composable (String) -> Unit,
+    error: @Composable (ErrorState) -> Unit,
 ) {
-    if (hasError) error(errorMessage.toString())
+    if (hasError) error(errorState)
 }
 
 fun <T> MutableStateFlow<UiState<T>>.success(data: T) {
     value = UiState(data = data)
 }
 
-fun <T> MutableStateFlow<UiState<T>>.error(message: String) {
-    value = UiState(hasError = true, errorMessage = message)
+fun <T> MutableStateFlow<UiState<T>>.error(errorState: ErrorState) {
+    value = UiState(hasError = true, errorState = errorState)
 }
 
 fun <T> MutableStateFlow<UiState<T>>.loading() {
@@ -76,7 +76,8 @@ fun <T> MutableStateFlow<UiState<T>>.setValue(result: Result<T>) {
     result.onSuccess {
         success(it)
     }.onFailure {
-        error(it.message.toString())
+        val errorState = it.toErrorState()
+        error(errorState)
     }
 }
 
@@ -85,7 +86,8 @@ suspend fun <T> MutableStateFlow<UiState<T>>.callRequest(block: suspend () -> T)
     suspendRunCatching {
         block()
     }.onFailure {
-        error(it.message.toString())
+        val errorState = it.toErrorState()
+        error(errorState)
     }.onSuccess {
         success(it)
     }

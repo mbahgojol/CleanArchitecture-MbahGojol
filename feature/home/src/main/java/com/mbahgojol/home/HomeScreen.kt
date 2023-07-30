@@ -19,7 +19,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.mbahgojol.common.ui.addErrorListener
 import com.mbahgojol.common.ui.addLoadingListener
 import com.mbahgojol.common.ui.addSuccessListener
-import com.mbahgojol.common.ui.collectAsUiState
+import com.mbahgojol.common.ui.collectAsUiStateWithLifecycle
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,7 +28,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
         viewModel.fetchNews()
     }
 
-    val listNewsUiState by viewModel.newsListState.collectAsUiState()
+    val listNewsUiState by viewModel.newsListState.collectAsUiStateWithLifecycle()
 
     Scaffold {
         Column(Modifier.padding(it)) {
@@ -44,8 +44,8 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                 }
             }
 
-            listNewsUiState.addErrorListener { errorMessage ->
-                Text(text = "Error = $errorMessage")
+            listNewsUiState.addErrorListener { errorState ->
+                Text(text = "Error = ${errorState.message}, Code = ${errorState.code}")
             }
 
             listNewsUiState.addSuccessListener { response ->

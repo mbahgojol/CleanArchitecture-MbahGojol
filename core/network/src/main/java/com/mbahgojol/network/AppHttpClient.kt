@@ -13,13 +13,11 @@ import dagger.hilt.components.SingletonComponent
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.DefaultRequest
-import io.ktor.client.plugins.observer.ResponseObserver
 import io.ktor.client.request.header
 import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
 import java.util.concurrent.TimeUnit
 import okhttp3.logging.HttpLoggingInterceptor
-import timber.log.Timber
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -40,8 +38,7 @@ object AppHttpClient {
                 }
 
                 addInterceptor(
-                    ChuckerInterceptor.Builder(context)
-                        .build()
+                    ChuckerInterceptor.Builder(context).build(),
                 )
                 addInterceptor(loggingInterceptor)
                 addInterceptor(authTokenInterceptor)
@@ -52,11 +49,7 @@ object AppHttpClient {
             }
         }
 
-        install(ResponseObserver) {
-            onResponse { response ->
-                Timber.d("HTTP status:", response.status.value)
-            }
-        }
+        expectSuccess = true
 
         install(DefaultRequest) {
             url(BuildConfig.BASE_URL)
@@ -64,3 +57,4 @@ object AppHttpClient {
         }
     }
 }
+

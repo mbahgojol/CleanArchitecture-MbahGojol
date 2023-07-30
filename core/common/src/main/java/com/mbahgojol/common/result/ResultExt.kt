@@ -11,6 +11,6 @@ suspend fun <T> suspendRunCatching(block: suspend () -> T): Result<T> = try {
     throw cancellationException
 } catch (exception: Exception) {
     Timber.tag("suspendRunCatching")
-        .i(exception, "Failed to evaluate a suspendRunCatchingBlock. Returning failure Result")
+        .e(exception, "Failed to evaluate a suspendRunCatchingBlock. Returning failure Result")
     Result.failure(exception)
 }

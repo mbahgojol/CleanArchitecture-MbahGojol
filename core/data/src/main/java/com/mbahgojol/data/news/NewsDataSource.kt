@@ -1,27 +1,22 @@
 package com.mbahgojol.data.news
 
-import com.mbahgojol.common.exception.HttpErrorInternalServerError
 import com.mbahgojol.core.network.BuildConfig
 import com.mbahgojol.data.dtos.ArticleDto
 import com.mbahgojol.data.dtos.ResponseNewsDto
-import com.mbahgojol.data.utils.requestData
+import com.mbahgojol.data.utils.safeRequest
 import com.mbahgojol.data.utils.toDto
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import javax.inject.Inject
 
 class NewsDataSource @Inject constructor(
-    private val httpClient: HttpClient,
+    private val client: HttpClient,
 ) {
     suspend fun getNews(): List<ArticleDto> {
-        return requestData {
-            val response = httpClient.get("/v2/everything?q=Apple&apiKey=${BuildConfig.API_KEY}")
+        return safeRequest {
+            val response = client.get("/v2/everything?q=Apple&apiKey=${BuildConfig.API_KEY}1")
             val responseNewsDto = response.toDto(ResponseNewsDto::class.java)
-            if (responseNewsDto.status == "ok") {
-                responseNewsDto.articles
-            } else {
-                throw HttpErrorInternalServerError()
-            }
+            responseNewsDto.articles
         }
     }
 }
