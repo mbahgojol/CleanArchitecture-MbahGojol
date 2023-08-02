@@ -14,7 +14,7 @@ class NewsDataSource @Inject constructor(
 ) {
     suspend fun getNews(): List<ArticleDto> {
         return safeRequest {
-            val response = client.get("/v2/everything?q=Apple&apiKey=${BuildConfig.API_KEY}1")
+            val response = client.get("/v2/everything?q=Apple&apiKey=${BuildConfig.API_KEY}")
             val responseNewsDto = response.toDto(ResponseNewsDto::class.java)
             responseNewsDto.articles
         }

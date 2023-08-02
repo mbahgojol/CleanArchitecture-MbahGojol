@@ -16,6 +16,8 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.timber)
     implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

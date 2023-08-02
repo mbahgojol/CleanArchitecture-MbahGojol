@@ -29,6 +29,8 @@ dependencies {
     implementation(projects.core.common)
 
     implementation(libs.timber)
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

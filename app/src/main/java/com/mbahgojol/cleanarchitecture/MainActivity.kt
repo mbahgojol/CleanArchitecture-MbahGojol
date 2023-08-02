@@ -10,8 +10,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.mbahgojol.common.ui.LocalNavigationContainer
 import com.mbahgojol.designsystem.theme.CleanArchitectureMbahGojolTheme
 import com.mbahgojol.home.HomeScreen
+import com.mbahgojol.home.detail.DetailScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,11 +23,22 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CleanArchitectureMbahGojolTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
-                ) {
-                    HomeScreen()
+            LocalNavigationContainer { navHostController ->
+                CleanArchitectureMbahGojolTheme {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background,
+                    ) {
+
+                        NavHost(navController = navHostController, startDestination = "home") {
+                            composable("home") {
+                                HomeScreen()
+                            }
+                            composable("detail") {
+                                DetailScreen()
+                            }
+                        }
+                    }
                 }
             }
         }
