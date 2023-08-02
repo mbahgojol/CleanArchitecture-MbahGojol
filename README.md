@@ -23,6 +23,7 @@ I have experience in Kotlin, Java, Swift and Flutter. And i am a Android Subject
 - ~~Navigation Compose~~
 - ~~Handle API Exception~~
 - ~~Ktor Configuration~~
+- ~~Setup Dependency with Dagger Hilt~~
 - ~~Create Base Use Case~~
 - ~~Create Version Catalog~~
 - ~~Create Modularization Clean Architecture~~
