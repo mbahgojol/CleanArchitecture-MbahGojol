@@ -17,6 +17,7 @@ import com.mbahgojol.designsystem.theme.CleanArchitectureMbahGojolTheme
 import com.mbahgojol.home.HomeScreen
 import com.mbahgojol.home.detail.DetailScreen
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -29,8 +30,9 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         color = MaterialTheme.colorScheme.background,
                     ) {
-
-                        NavHost(navController = navHostController, startDestination = "home") {
+                        NavHost(
+                            navController = navHostController, startDestination = "home",
+                        ) {
                             composable("home") {
                                 HomeScreen()
                             }
@@ -49,7 +51,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
-        modifier = modifier
+        modifier = modifier,
     )
 }
 
