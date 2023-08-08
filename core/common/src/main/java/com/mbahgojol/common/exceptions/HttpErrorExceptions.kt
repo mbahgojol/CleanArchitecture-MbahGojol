@@ -17,12 +17,12 @@ class HttpErrorForbidden(httpErrorResponse: HttpErrorResponse? = null) :
 
 class HttpErrorNotFound(httpErrorResponse: HttpErrorResponse? = null) : HttpError(httpErrorResponse)
 class HttpErrorRedirect(httpErrorResponse: HttpErrorResponse? = null) : HttpError(httpErrorResponse)
+class HttpErrorConnectionTimeout : Exception()
 open class HttpError(var httpErrorResponse: HttpErrorResponse? = null) : Exception()
 
 /**
  * Globar error exception.
  */
-class NetworkConnection : Exception()
 class NoInternetConnection : Exception()
 class UnexpectedError : Exception()
 class GenericError : Exception()

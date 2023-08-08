@@ -2,6 +2,7 @@ package com.mbahgojol.common.ui
 
 import com.mbahgojol.common.exceptions.HttpError
 import com.mbahgojol.common.exceptions.HttpErrorBadRequest
+import com.mbahgojol.common.exceptions.HttpErrorConnectionTimeout
 import com.mbahgojol.common.exceptions.HttpErrorInternalServerError
 import com.mbahgojol.common.exceptions.JsonSyntaxError
 
@@ -30,6 +31,13 @@ fun Throwable.toErrorState(): ErrorState {
             ErrorState(
                 message = httpErrorResponse?.message,
                 code = httpErrorResponse?.code,
+            )
+        }
+
+        is HttpErrorConnectionTimeout -> {
+            ErrorState(
+                message = "Oops! failed connect to server.",
+                code = "Timeout",
             )
         }
 
