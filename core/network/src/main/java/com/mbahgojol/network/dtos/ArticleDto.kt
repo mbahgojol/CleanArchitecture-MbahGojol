@@ -1,7 +1,6 @@
-package com.mbahgojol.data.dtos
+package com.mbahgojol.network.dtos
 
 import com.google.gson.annotations.SerializedName
-import com.mbahgojol.model.entities.ArticleEntities
 
 data class ArticleDto(
     @SerializedName("author") val author: String?,
@@ -17,8 +16,4 @@ data class ArticleDto(
 data class SourceDto(
     @SerializedName("id") val id: String,
     @SerializedName("name") val name: String,
-)
-
-fun ArticleDto.toArticleEntities() = ArticleEntities(
-    author.orEmpty(), content, description, publishedAt, title, url, urlToImage.orEmpty(),
 )

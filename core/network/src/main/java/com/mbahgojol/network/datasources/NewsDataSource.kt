@@ -1,10 +1,10 @@
-package com.mbahgojol.data.news
+package com.mbahgojol.network.datasources
 
 import com.mbahgojol.core.network.BuildConfig
-import com.mbahgojol.data.dtos.ArticleDto
-import com.mbahgojol.data.dtos.ResponseNewsDto
-import com.mbahgojol.data.utils.safeRequest
-import com.mbahgojol.data.utils.toDto
+import com.mbahgojol.network.dtos.ArticleDto
+import com.mbahgojol.network.dtos.ResponseNewsDto
+import com.mbahgojol.network.utils.safeRequest
+import com.mbahgojol.network.utils.toDto
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import javax.inject.Inject

@@ -24,6 +24,7 @@ dependencies {
     implementation(libs.okhttp.loggingInterceptor)
     debugImplementation(libs.chucker.library)
     releaseImplementation(libs.chucker.library.no.op)
+    implementation(libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

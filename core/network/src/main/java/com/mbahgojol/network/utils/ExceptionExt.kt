@@ -1,5 +1,5 @@
 @file:Suppress("unused")
-package com.mbahgojol.data.utils
+package com.mbahgojol.network.utils
 
 import com.google.gson.JsonSyntaxException
 import com.mbahgojol.common.exceptions.JsonSyntaxError

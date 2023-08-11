@@ -1,4 +1,4 @@
-package com.mbahgojol.data.utils
+package com.mbahgojol.network.utils
 
 import com.google.gson.Gson
 import io.ktor.client.statement.HttpResponse
