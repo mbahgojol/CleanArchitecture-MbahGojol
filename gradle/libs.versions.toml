@@ -22,6 +22,7 @@ coil = "2.4.0"
 compose = "1.4.1"
 compose-bom = "2023.06.01"
 composecompiler = "1.5.1"
+compose-multiplatform = "1.5.0-beta01"
 
 coroutines = "1.7.1"
 debugdrawer = "0.9.8"
@@ -193,6 +194,7 @@ kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", ve
 firebase-crashlytics-gradlePlugin = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsPlugin" }
 firebase-performance-gradlePlugin = { module = "com.google.firebase:perf-plugin", version.ref = "firebasePerfPlugin" }
 ksp-gradlePlugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+compose-gradlePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose-multiplatform" }
 
 tools-desugarjdklibs = "com.android.tools:desugar_jdk_libs:2.0.3"
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version = "2.6.0" }
@@ -210,7 +212,7 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-composeMultiplatform = { id = "org.jetbrains.compose", version = "1.4.1" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 android-test = { id = "com.android.test", version.ref = "agp" }
