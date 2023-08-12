@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.android.build.api.dsl.ApplicationExtension
 import com.mbahgojol.convention.configureFlavors
 import org.gradle.api.Plugin

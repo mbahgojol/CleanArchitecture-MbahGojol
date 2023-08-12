@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.mbahgojol.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -8,7 +10,7 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.kapt")
-                apply("dagger.hilt.android.plugin")
+                apply("com.google.dagger.hilt.android")
             }
 
             dependencies {

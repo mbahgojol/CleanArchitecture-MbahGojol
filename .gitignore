@@ -52,12 +52,8 @@ _sandbox
 # Android Studio captures folder
 captures/
 
-/.idea
-iosApp/Podfile.lock
-iosApp/Pods/*
-iosApp/iosApp.xcworkspace/*
-iosApp/iosApp.xcodeproj/*
-!iosApp/iosApp.xcodeproj/project.pbxproj
-presentation/presentation.podspec
-shared/shared.podspec
-
+app/src/dev/google-services.json
+app/src/prod/google-services.json
+app/src/stg/google-services.json
+*/google-services.json
+*.jks

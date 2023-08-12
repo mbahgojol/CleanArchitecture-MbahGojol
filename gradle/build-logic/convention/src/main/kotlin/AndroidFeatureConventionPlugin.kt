@@ -1,8 +1,8 @@
-import com.android.build.api.dsl.LibraryExtension
+@file:Suppress("unused")
+
 import com.mbahgojol.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 
 class AndroidFeatureConventionPlugin : Plugin<Project> {
@@ -16,11 +16,12 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                add("implementation", project(":core:model"))
+                add("implementation", libs.findLibrary("timber").get())
+                add("implementation", libs.findLibrary("androidx.core").get())
+                add("implementation", libs.findLibrary("androidx.appcompat").get())
+                add("implementation", libs.findLibrary("google.android.material").get())
+
                 add("implementation", project(":core:designsystem"))
-                add("implementation", project(":core:data"))
-                add("implementation", project(":core:common"))
-                add("implementation", project(":core:domain"))
 
                 add("implementation", libs.findLibrary("coil.coil").get())
                 add("implementation", libs.findLibrary("coil.compose").get())

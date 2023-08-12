@@ -15,14 +15,21 @@ android {
     }
 
     namespace = "com.mbahgojol.cleanarchitecture"
+
+    defaultConfig {
+        applicationId = "com.mbahgojol.cleanarchitecture"
+        versionCode = 1
+        versionName = "1.0"
+    }
 }
 
 dependencies {
     implementation(projects.core.designsystem)
     implementation(projects.feature.home)
-    implementation(projects.core.common)
 
     implementation(libs.timber)
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.junit)

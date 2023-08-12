@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.mbahgojol.convention.configureJacoco
 import org.gradle.api.Plugin

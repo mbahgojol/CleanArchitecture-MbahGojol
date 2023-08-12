@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 import com.android.build.gradle.LibraryExtension
 import com.mbahgojol.convention.configureKtorClient
 import org.gradle.api.Plugin
