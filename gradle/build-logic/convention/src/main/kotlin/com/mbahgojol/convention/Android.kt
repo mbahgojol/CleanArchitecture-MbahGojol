@@ -1,13 +1,15 @@
+@file:Suppress("unused", "UnusedReceiverParameter")
+
 package com.mbahgojol.convention
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.gradle.BaseExtension
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.get
 
 fun Project.configureAndroid() {
     android {
@@ -46,10 +48,26 @@ internal fun Project.configureBuildTypes(extension: ApplicationExtension) {
                 isShrinkResources = true
                 isMinifyEnabled = true
                 proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro",
                 )
-                signingConfig = signingConfigs.getByName(release)
+                signingConfig = signingConfigs[release]
             }
+        }
+
+        packaging {
+            resources {
+                excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+            }
+            resources.excludes += setOf(
+                // Exclude AndroidX version files
+                "META-INF/*.version",
+                // Exclude consumer proguard files
+                "META-INF/proguard/*",
+                // Exclude the Firebase/Fabric/other random properties files
+                "/*.properties",
+                "fabric/*.properties",
+                "META-INF/*.properties",
+            )
         }
     }
 }
@@ -63,11 +81,6 @@ internal fun Project.configureBuildTypes(extension: LibraryExtension) {
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
                 )
-            }
-        }
-        packaging {
-            resources {
-                excludes.add("/META-INF/{AL2.0,LGPL2.1}")
             }
         }
     }
