@@ -26,7 +26,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
             targetHierarchy.default()
 
             if (pluginManager.hasPlugin("com.android.library")) {
-                android()
+                androidTarget()
             }
 
             listOf(
