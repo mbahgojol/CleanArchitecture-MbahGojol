@@ -1,7 +1,7 @@
 [versions]
 androidMinSdk = "21"
-androidCompileSdk = "33"
-androidTargetSdk = "33"
+androidCompileSdk = "34"
+androidTargetSdk = "34"
 
 versionCode = "1"
 versionName = "1.0"
@@ -12,15 +12,15 @@ androidxlifecycle = "2.6.1"
 androidxactivity = "1.7.2"
 ksp = "1.9.0-1.0.11"
 
-firebaseCrashlyticsPlugin = "2.9.7"
+firebaseCrashlyticsPlugin = "2.9.8"
 firebasePerfPlugin = "1.4.2"
-firebaseBom = "32.2.0"
+firebaseBom = "32.2.2"
 
 chucker = "3.5.2"
 coil = "2.4.0"
 
 compose = "1.4.1"
-compose-bom = "2023.06.01"
+compose-bom = "2023.08.00"
 composecompiler = "1.5.1"
 compose-multiplatform = "1.5.0-beta01"
 
@@ -50,7 +50,7 @@ androidxCompose = "1.2.1"
 hilt = "2.47"
 hiltExt = "1.0.0"
 
-androidxNavigation = "2.6.0"
+androidxNavigation = "2.7.0"
 
 gson = "2.9.1"
 room = "2.5.2"
@@ -67,8 +67,8 @@ androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 androidx-activity-activity = { module = "androidx.activity:activity", version.ref = "androidxactivity" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxactivity" }
 androidx-archCoreTesting = "androidx.arch.core:core-testing:2.2.0"
-androidx-browser = "androidx.browser:browser:1.5.0"
-androidx-collection = "androidx.collection:collection:1.3.0-alpha04"
+androidx-browser = "androidx.browser:browser:1.6.0"
+androidx-collection = "androidx.collection:collection:1.3.0-beta01"
 androidx-core = "androidx.core:core-ktx:1.10.1"
 androidx-emoji = "androidx.emoji:emoji:1.1.0"
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
@@ -91,7 +91,7 @@ androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
 androidx-test-junit = "androidx.test.ext:junit-ktx:1.1.5"
 androidx-test-rules = "androidx.test:rules:1.5.0"
 androidx-test-runner = "androidx.test:runner:1.5.2"
-androidx-benchmark-macro = "androidx.benchmark:benchmark-macro-junit4:1.2.0-beta02"
+androidx-benchmark-macro = "androidx.benchmark:benchmark-macro-junit4:1.2.0-beta03"
 androidx-uiautomator = "androidx.test.uiautomator:uiautomator:2.2.0"
 junit = "junit:junit:4.13.2"
 
@@ -197,7 +197,7 @@ ksp-gradlePlugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.g
 compose-gradlePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose-multiplatform" }
 
 tools-desugarjdklibs = "com.android.tools:desugar_jdk_libs:2.0.3"
-androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version = "2.6.0" }
+androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version = "androidxNavigation" }
 
 [bundles]
 compose = ["androidx-activity-compose", "compose-material3-material3", "compose-ui-ui", "compose-ui-graphics",
